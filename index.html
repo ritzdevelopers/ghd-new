@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHD Project</title>
+
+    <!-- Montserrat Font (100-700) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lenis JS CDN -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- GSAP ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="relative">
+
+    <!-- Page Navbar  -->
+    <nav class="w-full h-auto">
+
+    </nav>
+
+
+    <main class="w-full relative">
+
+        <!-- Section 1 Is Starting From Here  -->
+        <section class="w-full h-auto">
+            <img src="img/s1/s1-banner2.jpg" alt="s1-banner2" class="w-full h-auto object-cover">
+        </section>
+
+    </main>
+
+    <!-- Page Sticky Navbar  -->
+    <nav class="w-full h-auto sticky bg-white top-0 z-50 px-[70px] py-[20px]">
+        <!-- Centered Align Container  -->
+        <div class="w-full flex justify-between items-center">
+            <!-- Left Side Container  -->
+            <div class="flex items-center gap-[150px]">
+                <!-- Logo Container  -->
+                <div class="w-auto h-auto">
+                    <img src="img/logo/logo.jpg" alt="ghd-logo" class="w-[197px] h-auto object-cover">
+                </div>
+
+                <!-- Links Container  -->
+                <div class="flex items-center gap-[27px]">
+                    <a href="#" class="font-[500] text-[16px] text-[#515151] cursor-pointer">Home</a>
+                    <a href="#" class="font-[500] text-[16px] text-[#515151] cursor-pointer">Overview</a>
+                    <a href="#" class="font-[500] text-[16px] text-[#515151] cursor-pointer">Highlights</a>
+                    <a href="#" class="font-[500] text-[16px] text-[#515151] cursor-pointer">Amenities</a>
+                    <a href="#" class="font-[500] text-[16px] text-[#515151] cursor-pointer">Gallery</a>
+                    <a href="#" class="font-[500] text-[16px] text-[#515151] cursor-pointer">Location</a>
+                </div>
+            </div>
+            <!-- Right Side Container  -->
+            <div>
+                <button
+                    class="w-[170px] h-[40px] text-white bg-[#5E0834] uppercase font-[700] text-[16px] cursor-pointer">Enqire
+                    Now</button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Section 2 Is Starting From Here   -->
+    <section class="w-full min-h-[606px] relative flex justify-center items-center px-[40px]">
+        <!-- Absolute Position Container   -->
+        <div class="absolute right-0 top-0 w-auto h-full z-[-1]"><img src="img/s2/s2-abs-img.png" alt=""
+                class="w-full h-full object-cover"></div>
+        <!-- Container  -->
+        <div class="w-full h-full">
+
+
+
+            <!-- Content Container   -->
+            <div class="w-full h-full flex justify-between items-center">
+
+                <!-- Left Side Container  -->
+                <div class="w-[480px] px-[30px] pt-[59px] pb-[50px] shadow-lg bg-white">
+                    <form class="flex flex-col gap-[35px] text-center w-full">
+                        <h2 class="text-[28px] font-[600] text-black">Enquire Now</h2>
+
+                        <div class="w-full flex flex-col gap-[19px]">
+                            <input type="text" class="w-full h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2"
+                                placeholder="Name">
+                            <input type="text" class="w-full h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2"
+                                placeholder="Email">
+                            <input type="text" class="w-full h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2"
+                                placeholder="Phone">
+
+                            <button class="w-full h-[48px] bg-[#5E0834] text-center">
+                                <p class="text-white text-[16px] font-[700]">Submit</p>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Side Container  -->
+                <div class="flex flex-col gap-[44px]">
+
+                    <!-- Top Container For Text  -->
+                    <div class="flex flex-col gap-[20px]">
+                        <h3 class="text-[36px] font-[600] text-black">Overview</h3>
+                        <p class="text-[16px] font-[400] text-[#515151] max-w-[704px]">
+                            GHD Sky Park brings premium serviced living to the heart of Margao. Choose from fully
+                            furnished suites designed for comfort, convenience, and easy ownership. With lifestyle
+                            amenities and hotel-grade operations, it’s ideal for NRIs, holiday-home buyers, and
+                            investors who want a Goa base without day-to-day maintenance hassles
+                        </p>
+                    </div>
+
+                    <!-- Bottom Container For Static Content  -->
+                    <div class="flex w-full justify-around">
+
+                        <!-- Card 1  -->
+                        <div class="flex flex-col justify-center items-center gap-[20px] text-center py-8">
+                            <div class="w-[38px]">
+                                <img src="svg/s2/s2-location.svg" alt="" class="w-full h-auto object-cover">
+                            </div>
+                            <p class="text-[16px] font-[500]">Central Margao, <br> South Goa</p>
+                        </div>
+
+                        <!-- Card 2  -->
+                        <div
+                            class="flex flex-col justify-center items-center gap-[20px] text-center px-10 py-8 border-l-[1px] border-r-[1px] border-[#D9D9D9]">
+                            <div class="w-[38px]">
+                                <img src="svg/s2/s2-hand.svg" alt="" class="w-full h-auto object-cover">
+                            </div>
+                            <p class="text-[16px] font-[500]">270+ serviced suites <br> (Studios, 1 BHK, 2 BHK)</p>
+                        </div>
+
+
+                        <!-- Card 3  -->
+                        <div class="flex flex-col justify-center items-center gap-[20px] text-center  py-8">
+                            <div class="w-[38px]">
+                                <img src="svg/s2/s2-goal.svg" alt="" class="w-full h-auto object-cover">
+                            </div>
+                            <p class="text-[16px] font-[500]">Targeted by Dec 2029 <br> (as per project plan)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section 3 Is Starting From Here    -->
+    <section class="w-full flex flex-col gap-[58px] justify-center items-center relative pt-[70px] pb-[53px]">
+
+        <!-- Absolute Position Container  -->
+        <div class="w-full h-[628px] bg-[#5E0834] absolute top-0 left-0 z-[-1]"></div>
+
+        <!-- Center Align Container 1  -->
+        <div class="w-full flex flex-col justify-center items-center gap-[38px]">
+            <!-- Top Text Container  -->
+            <div class="w-full flex flex-col justify-center items-center text-center gap-[20px]">
+                <h3
+                    class="text-[36px] font-[600] bg-gradient-to-b from-[#FCE890] to-[#D29A38] text-transparent bg-clip-text">
+                    Our Story</h3>
+                <p class="text-[16px] font-[400] text-[#ffffff] max-w-[904px]">
+                    GHD Sky Park brings premium serviced living to the heart of Margao. Choose from fully furnished
+                    suites designed for comfort, convenience, and easy ownership. With lifestyle amenities and
+                    hotel-grade operations
+                </p>
+            </div>
+
+            <!-- Bottom Video Container  -->
+            <div class="w-[997px]">
+                <video src="img/s3/ghd-video.mp4" class="w-full h-auto object-cover" autoplay muted loop
+                    playsinline></video>
+            </div>
+        </div>
+
+        <!-- Center Align Container 2  -->
+        <div class="w-full flex flex-col justify-center items-center text-center ">
+            <h2 class="font-[600] text-[36px] text[#111111]">Key Highlights</h2>
+
+            <!-- Slider Container  -->
+            <div class="flex flex-col justify-center items-center max-w-[1192px]">
+                <!-- Slide  Wrapper Container  -->
+                <div class="flex justify-between items-center">
+
+                    <!-- Slide 1  -->
+                     <div class="p-2">
+                        <div class="w-[340px] flex flex-col justify-center items-center gap-3">
+                            <div class="w-[100px]">
+                                <img src="img/s3/s3-home.png" alt="" class="w-full h-auto object-cover">
+                            </div>
+
+                            <div class="flex flex-col justify-center items-center gap-2 text-center">
+                                <h4 class="text-[18px] font-[600] text-[#111111]">Ready-to-move-in options</h4>
+                                <p class="text-[16px] font-[400] text-[#515151]">
+                                    Select 1 & 2 BHK homes available for immediate comfort and quick handover.
+                                </p>
+                            </div>
+                        </div>
+                     </div>
+
+
+                        <!-- Slide 2  -->
+                        <div class="p-2">
+                            <div class="w-[340px] flex flex-col justify-center items-center gap-3">
+                                <div class="w-[100px]">
+                                    <img src="img/s3/s3-home.png" alt="" class="w-full h-auto object-cover">
+                                </div>
+    
+                                <div class="flex flex-col justify-center items-center gap-2 text-center">
+                                    <h4 class="text-[18px] font-[600] text-[#111111]">Ready-to-move-in options</h4>
+                                    <p class="text-[16px] font-[400] text-[#515151]">
+                                        Select 1 & 2 BHK homes available for immediate comfort and quick handover.
+                                    </p>
+                                </div>
+                            </div>
+                         </div>
+
+
+
+                            <!-- Slide 3  -->
+                     <div class="p-2">
+                        <div class="w-[340px] flex flex-col justify-center items-center gap-3">
+                            <div class="w-[100px]">
+                                <img src="img/s3/s3-home.png" alt="" class="w-full h-auto object-cover">
+                            </div>
+
+                            <div class="flex flex-col justify-center items-center gap-2 text-center">
+                                <h4 class="text-[18px] font-[600] text-[#111111]">Ready-to-move-in options</h4>
+                                <p class="text-[16px] font-[400] text-[#515151]">
+                                    Select 1 & 2 BHK homes available for immediate comfort and quick handover.
+                                </p>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+
+                <!-- Slider Pagination Dots  -->
+                <div class="flex justify-center items-center gap-2">
+                    <div class="w-[10px] h-[10px] bg-[#0000005E] rounded-full"></div>
+                    <div class="w-[10px] h-[10px] bg-[#515151] rounded-full"></div>
+                    <div class="w-[10px] h-[10px] bg-[#0000005E] rounded-full"></div>
+                    <div class="w-[10px] h-[10px] bg-[#0000005E] rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
