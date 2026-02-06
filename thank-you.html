@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Thank You | GHD Project</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body class="min-h-screen flex flex-col bg-[#fafafa] font-['Montserrat']">
+        <header class="flex-shrink-0 bg-white shadow-sm">
+            <div class="max-w-[1200px] mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+                <a href="index.html" class="text-[#111111] font-semibold text-lg hover:text-[#5E0834]">← Back to Home</a>
+            </div>
+        </header>
+        <main class="flex-1 flex items-center justify-center px-4 py-12">
+            <div class="text-center max-w-md">
+                <h1 class="text-[#5E0834] font-bold text-3xl sm:text-4xl mb-4">Thank You</h1>
+                <p class="text-[#111111] text-base sm:text-lg mb-6">
+                    Your enquiry has been submitted successfully. We will get back to you soon.
+                </p>
+                <p class="text-[#111111] text-sm sm:text-base mb-2">Redirecting to home in</p>
+                <p id="thank-you-countdown" class="text-[#5E0834] font-bold text-4xl sm:text-5xl mb-8 tabular-nums">6</p>
+                <a
+                    href="index.html"
+                    class="inline-block bg-[#5E0834] text-white font-semibold px-8 py-3 rounded hover:bg-[#4a0629] transition-colors"
+                >
+                    Back to Home
+                </a>
+            </div>
+        </main>
+        <footer class="flex-shrink-0 bg-[#641235] py-8">
+            <div class="max-w-[1200px] mx-auto px-4 sm:px-6 text-center">
+                <span class="text-[#cccccc] text-xs sm:text-sm">© 2026 Ghdinfra. All Rights Reserved.</span>
+            </div>
+        </footer>
+        <script>
+            (function () {
+                var el = document.getElementById("thank-you-countdown");
+                var count = 6;
+                var t = setInterval(function () {
+                    count--;
+                    if (el) el.textContent = count;
+                    if (count <= 0) {
+                        clearInterval(t);
+                        window.location.href = "index.html";
+                    }
+                }, 1000);
+            })();
+        </script>
+    </body>
+</html>
