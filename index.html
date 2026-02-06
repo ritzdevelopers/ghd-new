@@ -33,6 +33,9 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <!-- Custom Styles -->
         <link rel="stylesheet" href="styles.css" />
+        <style>
+            html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+        </style>
     </head>
 
     <body class="relative">
@@ -56,12 +59,12 @@
                     </svg>
                 </button>
                 <nav class="flex flex-col gap-6 sm:gap-8 flex-1">
-                    <a href="#" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Home</a>
-                    <a href="#" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Overview</a>
-                    <a href="#" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Highlights</a>
-                    <a href="#" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Amenities</a>
-                    <a href="#" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Gallery</a>
-                    <a href="#" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Location</a>
+                    <a href="#home" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Home</a>
+                    <a href="#overview" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Overview</a>
+                    <a href="#highlights" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Highlights</a>
+                    <a href="#amenities" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Amenities</a>
+                    <a href="#gallery" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Gallery</a>
+                    <a href="#location" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Location</a>
                 </nav>
                 <a
                     href="#"
@@ -78,7 +81,7 @@
 
         <main class="w-full relative">
             <!-- Section 1 Is Starting From Here  -->
-            <section class="w-full h-auto overflow-hidden">
+            <section id="home" class="w-full h-auto overflow-hidden">
                 <img
                     src="img/s1/s1-banner2.jpg"
                     alt="s1-banner2"
@@ -107,32 +110,32 @@
                 <!-- Center - Nav links (desktop lg+ only) -->
                 <div class="hidden lg:flex items-center justify-center gap-4 lg:gap-[17px] xl:gap-[27px]">
                     <a
-                        href="#"
+                        href="#home"
                         class="font-[500] text-[16px] text-[#515151] cursor-pointer hover:text-[#5E0834] whitespace-nowrap"
                         >Home</a
                     >
                     <a
-                        href="#"
+                        href="#overview"
                         class="font-[500] text-[16px] text-[#515151] cursor-pointer hover:text-[#5E0834] whitespace-nowrap"
                         >Overview</a
                     >
                     <a
-                        href="#"
+                        href="#highlights"
                         class="font-[500] text-[16px] text-[#515151] cursor-pointer hover:text-[#5E0834] whitespace-nowrap"
                         >Highlights</a
                     >
                     <a
-                        href="#"
+                        href="#amenities"
                         class="font-[500] text-[16px] text-[#515151] cursor-pointer hover:text-[#5E0834] whitespace-nowrap"
                         >Amenities</a
                     >
                     <a
-                        href="#"
+                        href="#gallery"
                         class="font-[500] text-[16px] text-[#515151] cursor-pointer hover:text-[#5E0834] whitespace-nowrap"
                         >Gallery</a
                     >
                     <a
-                        href="#"
+                        href="#location"
                         class="font-[500] text-[16px] text-[#515151] cursor-pointer hover:text-[#5E0834] whitespace-nowrap"
                         >Location</a
                     >
@@ -169,6 +172,7 @@
         </nav>
         <!-- Section 2 Is Starting From Here   -->
         <section
+            id="overview"
             class="w-full min-h-[360px] sm:min-h-[420px] md:min-h-[506px] lg:min-h-[606px] relative flex justify-center items-center px-3 sm:px-5 md:px-6 lg:px-[40px] py-5 sm:py-7 md:py-8 lg:py-10"
         >
             <!-- Absolute Position Container - pura section cover, left se right tak -->
@@ -321,6 +325,7 @@
 
         <!-- Section 3 Is Starting From Here    -->
         <section
+           
             class="w-full flex flex-col gap-8 sm:gap-12 lg:gap-[58px] justify-center items-center relative pt-10 sm:pt-14 lg:pt-[70px] pb-8 sm:pb-10 lg:pb-[53px] px-4 sm:px-6"
         >
             <!-- Absolute Position Container  -->
@@ -367,6 +372,7 @@
             <!-- Center Align Container 2 - large: center + left/right border -->
             <div
                 class="key-highlights-wrap w-full flex flex-col justify-center items-center text-center px-2 sm:mt-10 gap-6 sm:gap-[38px]"
+                id="highlights"
             >
                 <h2 class="font-[600] text-[24px] sm:text-[30px] lg:text-[36px] text-[#111111] ">
                     Key Highlights
@@ -465,6 +471,7 @@
 
         <!-- Section 4 - Amenities -->
         <section
+            id="amenities"
             class="w-full py-[60px] md:py-[80px] px-4 md:px-8 bg-[#FDF5F8]"
         >
             <div
@@ -825,6 +832,7 @@
 
         <!--section-6 is starting from here-->
         <section
+            id="gallery"
             class="w-full bg-white py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-[70px]"
         >
             <div class="w-full max-w-[1400px] mx-auto">
@@ -940,6 +948,7 @@
 
         <!--section -7 is starting from here-->
         <section
+            id="location"
             class="w-full bg-[#1A0610] py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-[70px]"
         >
             <div class="w-full max-w-[1400px] mx-auto">
