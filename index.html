@@ -65,6 +65,7 @@
                 </nav>
                 <a
                     href="#"
+                    id="mobile-enquire-btn"
                     class="nav-menu-link w-full max-w-[280px] h-12 sm:h-14 text-center text-white bg-[#5E0834] uppercase font-[700] text-[16px] flex items-center justify-center hover:bg-[#4a0629] mt-4"
                 >
                     Enqire Now
@@ -157,6 +158,8 @@
                         </span>
                     </button>
                     <button
+                        id="desktop-enquire-btn"
+                        type="button"
                         class="hidden lg:inline-flex w-full min-w-[120px] sm:w-[140px] md:w-[170px] h-9 sm:h-[40px] text-white bg-[#5E0834] uppercase font-[700] text-[14px] sm:text-[16px] cursor-pointer hover:bg-[#4a0629] flex-shrink-0 items-center justify-center"
                     >
                         Enqire Now
@@ -185,6 +188,7 @@
                         class="w-full max-w-[480px] px-3 sm:px-5 md:px-6 lg:px-[30px] pt-5 sm:pt-6 md:pt-8 lg:pt-[59px] pb-5 sm:pb-6 lg:pb-[50px] shadow-lg bg-white order-2 lg:order-1 flex-shrink-0"
                     >
                         <form
+                            id="section2Form"
                             class="flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-[35px] text-center w-full"
                         >
                             <h2 class="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] font-[600] text-black">
@@ -194,25 +198,43 @@
                             <div class="w-full flex flex-col gap-3 sm:gap-4 lg:gap-[19px]">
                                 <input
                                     type="text"
-                                    class="w-full h-11 sm:h-12 md:h-[52px] lg:h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2 text-[14px] sm:text-[15px] lg:text-base"
+                                    name="name"
                                     placeholder="Name"
+                                    required
+                                    class="w-full h-11 sm:h-12 md:h-[52px] lg:h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2 text-[14px] sm:text-[15px] lg:text-base"
                                 />
                                 <input
-                                    type="text"
-                                    class="w-full h-11 sm:h-12 md:h-[52px] lg:h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2 text-[14px] sm:text-[15px] lg:text-base"
+                                    type="email"
+                                    name="email"
                                     placeholder="Email"
+                                    required
+                                    class="w-full h-11 sm:h-12 md:h-[52px] lg:h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2 text-[14px] sm:text-[15px] lg:text-base"
                                 />
                                 <input
-                                    type="text"
-                                    class="w-full h-11 sm:h-12 md:h-[52px] lg:h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2 text-[14px] sm:text-[15px] lg:text-base"
+                                    type="tel"
+                                    name="phone"
                                     placeholder="Phone"
+                                    required
+                                    class="w-full h-11 sm:h-12 md:h-[52px] lg:h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2 text-[14px] sm:text-[15px] lg:text-base"
                                 />
+                                <textarea
+                                    name="message"
+                                    placeholder="Message"
+                                    rows="3"
+                                    required
+                                    class="w-full min-h-[80px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2 pt-2 text-[14px] sm:text-[15px] lg:text-base resize-y"
+                                ></textarea>
 
                                 <button
-                                    class="w-full h-11 sm:h-[44px] lg:h-[48px] bg-[#5E0834] text-center "
+                                    type="submit"
+                                    id="section2SubmitBtn"
+                                    class="w-full h-11 sm:h-[44px] lg:h-[48px] bg-[#5E0834] text-center"
                                 >
-                                    <span class="text-white text-[14px] sm:text-[15px] lg:text-[16px] font-[700]">
+                                    <span id="section2SubmitText" class="text-white text-[14px] sm:text-[15px] lg:text-[16px] font-[700]">
                                         Submit
+                                    </span>
+                                    <span id="section2SubmitLoading" class="text-white text-[14px] sm:text-[15px] lg:text-[16px] font-[700] hidden">
+                                        Submitting...
                                     </span>
                                 </button>
                             </div>
@@ -781,6 +803,7 @@
                         <!-- Download Brochure Button - mobile par chota -->
                         <a
                             href="#"
+                            id="section5-download-btn"
                             class="section-5-download-btn w-max px-3 py-3 sm:px-3 sm:py-2 mt-1 sm:mt-2 text-center text-[14px] sm:text-[16px] font-bold leading-6 text-white bg-gradient-to-b from-[#FCE890] to-[#D29A38] hover:opacity-90 transition-opacity cursor-pointer"
                             style="
                                 font-family: Montserrat, sans-serif;
@@ -1057,7 +1080,7 @@
                         </p>
                     </div>
                     <div class="md:shrink-0 w-full md:w-auto flex justify-center md:justify-end">
-                        <a href="#" class="section-8-btn inline-block w-full  text-center border-2 border-white text-white font-['Montserrat'] font-medium px-3 py-3 sm:px-5 sm:py-3 md:px-3 md:py-3 text-[14px] sm:text-[15px] md:text-[16px] hover:bg-white hover:text-black transition-colors duration-200">
+                        <a href="#" id="section8-download-btn" class="section-8-btn inline-block w-full  text-center border-2 border-white text-white font-['Montserrat'] font-medium px-3 py-3 sm:px-5 sm:py-3 md:px-3 md:py-3 text-[14px] sm:text-[15px] md:text-[16px] hover:bg-white hover:text-black transition-colors duration-200">
                             Download Brochure
                         </a>
                     </div>
@@ -1083,10 +1106,10 @@
                 <div class="relative z-10 flex-1 min-h-[120px]"></div>
                 <!-- Bottom CTA buttons (on image area) - z-30 taaki form card ke upar dikhen, mobile niche + gap -->
                 <div class="section-footer-cta-wrap relative z-30 w-full flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-6 sm:gap-4 px-4 sm:px-6 md:px-10 lg:px-[70px] pt-16 sm:pt-0 pb-6 sm:pb-8 md:pb-10">
-                    <a href="#" class="section-footer-cta section-footer-cta-left order-2 sm:order-1 inline-flex items-center justify-center px-6  py-3  font-['Montserrat'] font-semibold text-white text-[14px] sm:text-[15px] uppercase tracking-wide hover:opacity-95 transition-opacity bg-[linear-gradient(180deg,#FCE890_0%,#D29A38_100%)]">
+                    <a href="#" id="footer-download-btn" class="section-footer-cta section-footer-cta-left order-2 sm:order-1 inline-flex items-center justify-center px-6  py-3  font-['Montserrat'] font-semibold text-white text-[14px] sm:text-[15px] uppercase tracking-wide hover:opacity-95 transition-opacity bg-[linear-gradient(180deg,#FCE890_0%,#D29A38_100%)]">
                         Download Brochure
                     </a>
-                    <a href="#" class="section-footer-cta w-max section-footer-cta-right order-1 sm:order-2 inline-flex items-center justify-center  px-6  py-3  font-['Montserrat'] font-semibold text-white text-[11px] sm:text-[15px] uppercase tracking-wide hover:opacity-95 transition-opacity bg-[linear-gradient(180deg,#FCE890_0%,#D29A38_100%)]">
+                    <a href="#" id="footer-enquire-btn" class="section-footer-cta w-max section-footer-cta-right order-1 sm:order-2 inline-flex items-center justify-center  px-6  py-3  font-['Montserrat'] font-semibold text-white text-[11px] sm:text-[15px] uppercase tracking-wide hover:opacity-95 transition-opacity bg-[linear-gradient(180deg,#FCE890_0%,#D29A38_100%)]">
                         Enquire Now
                     </a>
                 </div>
@@ -1099,7 +1122,7 @@
     Enquire Now
 </h2>
 
-                    <form id="section-footer-form" class="section-footer-form flex flex-col gap-4 sm:gap-5" action="#" method="post" novalidate>
+                    <form id="footerForm" class="section-footer-form flex flex-col gap-4 sm:gap-5" action="#" method="post" novalidate>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                             <div>
                                 <label for="footer-name" class="sr-only">Name</label>
@@ -1170,9 +1193,11 @@
                         <div class="flex justify-center Align-items-center">
                         <button
                             type="submit"
+                            id="footerSubmitBtn"
                             class="section-footer-submit w-[-webkit-fill-available] h-12 sm:h-[52px] bg-[#5E0834] text-white font-['Montserrat'] font-semibold text-[15px] sm:text-[16px] shadow-md hover:bg-[#4a0629] transition-colors duration-200 mt-1 "
                         >
-                            Book a Site Visit Now
+                            <span id="footerSubmitText">Book a Site Visit Now</span>
+                            <span id="footerSubmitLoading" class="hidden">Submitting...</span>
                         </button>
 
                     </form>
@@ -1210,9 +1235,386 @@
             </div>
         </section>
 
+        <!-- Popup Form Modal -->
+        <div id="popupModal" class="fixed inset-0 z-[100] bg-black bg-opacity-50 hidden items-center justify-center px-4">
+            <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+                <!-- Close Button -->
+                <button
+                    id="popupCloseBtn"
+                    type="button"
+                    class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none"
+                    aria-label="Close popup"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                
+                <!-- Form -->
+                <h2 class="text-[24px] sm:text-[28px] font-[600] text-black mb-6 text-center">
+                    Enquire Now
+                </h2>
+                <form id="popupForm" class="flex flex-col gap-4 sm:gap-5">
+                    <div>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Name"
+                            required
+                            class="w-full h-12 sm:h-[52px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-4 text-[14px] sm:text-[15px] focus:outline-none focus:border-[#5E0834]"
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            required
+                            class="w-full h-12 sm:h-[52px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-4 text-[14px] sm:text-[15px] focus:outline-none focus:border-[#5E0834]"
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="tel"
+                            name="phone"
+                            placeholder="Phone"
+                            required
+                            class="w-full h-12 sm:h-[52px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-4 text-[14px] sm:text-[15px] focus:outline-none focus:border-[#5E0834]"
+                        />
+                    </div>
+                    <div>
+                        <textarea
+                            name="message"
+                            placeholder="Message"
+                            rows="4"
+                            required
+                            class="w-full min-h-[100px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-4 pt-3 text-[14px] sm:text-[15px] focus:outline-none focus:border-[#5E0834] resize-y"
+                        ></textarea>
+                    </div>
+                    <button
+                        type="submit"
+                        id="popupSubmitBtn"
+                        class="w-full h-12 sm:h-[48px] bg-[#5E0834] text-white text-[14px] sm:text-[16px] font-[700] hover:bg-[#4a0629] transition-colors"
+                    >
+                        <span id="popupSubmitText">Submit</span>
+                        <span id="popupSubmitLoading" class="hidden">Submitting...</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Error Popup Modal -->
+        <div id="errorModal" class="fixed inset-0 z-[110] bg-black bg-opacity-50 hidden items-center justify-center px-4">
+            <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6 sm:p-8 relative">
+                <button
+                    id="errorCloseBtn"
+                    type="button"
+                    class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none"
+                    aria-label="Close error"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <div class="text-center">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 mx-auto text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-[20px] sm:text-[24px] font-[600] text-black mb-2">Error</h3>
+                    <p id="errorMessage" class="text-[14px] sm:text-[16px] text-gray-600 mb-6"></p>
+                    <button
+                        id="errorOkBtn"
+                        type="button"
+                        class="w-full h-12 bg-[#5E0834] text-white text-[14px] sm:text-[16px] font-[700] hover:bg-[#4a0629] transition-colors"
+                    >
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- Swiper JS -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="script.js"></script>
+        
+        <!-- Google Sheets Form Submission Script -->
+        <script>
+        // Google Sheets Script URL
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwj_YFOuwVD2JHxdFFU5a7Dz9VyHYk-RnUvmw3TVA8U9rQwK_3iIs4A28zIBQwUW8Kcjw/exec';
+        const SHEET_NAME = 'Sheet1'; // Change this to your actual sheet name
+
+        // Function to submit data to Google Sheets
+        async function submitToGoogleSheets(formData, formType = 'contact') {
+            try {
+                // Prepare data for Google Sheets
+                // The script expects field names matching your sheet headers
+                const data = {
+                    sheetName: SHEET_NAME,
+                    Name: formData.name || formData.get('name'),
+                    Email: formData.email || formData.get('email'),
+                    Phone: formData.phone || formData.get('phone'),
+                    Message: formData.message || formData.get('message')
+                };
+
+                // Create form data
+                const formDataToSend = new FormData();
+                Object.keys(data).forEach(key => {
+                    formDataToSend.append(key, data[key]);
+                });
+
+                // Submit to Google Sheets
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: formDataToSend
+                });
+
+                const result = await response.json();
+                
+                if (result.result === 'success') {
+                    return { success: true, message: 'Form submitted successfully!' };
+                } else {
+                    throw new Error(result.error?.message || 'Failed to submit form');
+                }
+            } catch (error) {
+                console.error('Error submitting to Google Sheets:', error);
+                return { success: false, message: error.message || 'Failed to submit form. Please try again.' };
+            }
+        }
+
+        // Function to show error popup
+        function showErrorPopup(message) {
+            const errorModal = document.getElementById('errorModal');
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.textContent = message;
+            errorModal.classList.remove('hidden');
+            errorModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Function to close error popup
+        function closeErrorPopup() {
+            const errorModal = document.getElementById('errorModal');
+            errorModal.classList.add('hidden');
+            errorModal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // Handle section 2 form submission
+        document.getElementById('section2Form')?.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const submitBtn = document.getElementById('section2SubmitBtn');
+            const submitText = document.getElementById('section2SubmitText');
+            const submitLoading = document.getElementById('section2SubmitLoading');
+
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitText.classList.add('hidden');
+            submitLoading.classList.remove('hidden');
+
+            try {
+                const formData = new FormData(form);
+                const result = await submitToGoogleSheets(formData, 'section2');
+
+                if (result.success) {
+                    // Store current URL in sessionStorage for redirect back
+                    sessionStorage.setItem('previousUrl', window.location.href);
+                    // Redirect to thank you page
+                    window.location.href = 'thankyou.html';
+                } else {
+                    showErrorPopup(result.message);
+                    submitBtn.disabled = false;
+                    submitText.classList.remove('hidden');
+                    submitLoading.classList.add('hidden');
+                }
+            } catch (error) {
+                showErrorPopup('An error occurred. Please try again.');
+                submitBtn.disabled = false;
+                submitText.classList.remove('hidden');
+                submitLoading.classList.add('hidden');
+            }
+        });
+
+        // Handle footer form submission
+        document.getElementById('footerForm')?.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const submitBtn = document.getElementById('footerSubmitBtn');
+            const submitText = document.getElementById('footerSubmitText');
+            const submitLoading = document.getElementById('footerSubmitLoading');
+
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitText.classList.add('hidden');
+            submitLoading.classList.remove('hidden');
+
+            try {
+                const formData = new FormData(form);
+                const result = await submitToGoogleSheets(formData, 'footer');
+
+                if (result.success) {
+                    // Store current URL in sessionStorage for redirect back
+                    sessionStorage.setItem('previousUrl', window.location.href);
+                    // Redirect to thank you page
+                    window.location.href = 'thankyou.html';
+                } else {
+                    showErrorPopup(result.message);
+                    submitBtn.disabled = false;
+                    submitText.classList.remove('hidden');
+                    submitLoading.classList.add('hidden');
+                }
+            } catch (error) {
+                showErrorPopup('An error occurred. Please try again.');
+                submitBtn.disabled = false;
+                submitText.classList.remove('hidden');
+                submitLoading.classList.add('hidden');
+            }
+        });
+
+        // Handle popup form submission
+        document.getElementById('popupForm')?.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const submitBtn = document.getElementById('popupSubmitBtn');
+            const submitText = document.getElementById('popupSubmitText');
+            const submitLoading = document.getElementById('popupSubmitLoading');
+
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitText.classList.add('hidden');
+            submitLoading.classList.remove('hidden');
+
+            try {
+                const formData = new FormData(form);
+                const result = await submitToGoogleSheets(formData, 'popup');
+
+                if (result.success) {
+                    // Close popup
+                    closePopupModal();
+                    // Store current URL in sessionStorage for redirect back
+                    sessionStorage.setItem('previousUrl', window.location.href);
+                    // Redirect to thank you page
+                    window.location.href = 'thankyou.html';
+                } else {
+                    showErrorPopup(result.message);
+                    submitBtn.disabled = false;
+                    submitText.classList.remove('hidden');
+                    submitLoading.classList.add('hidden');
+                }
+            } catch (error) {
+                showErrorPopup('An error occurred. Please try again.');
+                submitBtn.disabled = false;
+                submitText.classList.remove('hidden');
+                submitLoading.classList.add('hidden');
+            }
+        });
+
+        // Popup Modal Functions
+        function openPopupModal() {
+            const modal = document.getElementById('popupModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePopupModal() {
+            const modal = document.getElementById('popupModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+            // Reset form
+            document.getElementById('popupForm').reset();
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('popupModal')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopupModal();
+            }
+        });
+
+        // Close popup on close button click
+        document.getElementById('popupCloseBtn')?.addEventListener('click', function() {
+            closePopupModal();
+        });
+
+        // Close popup on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePopupModal();
+                closeErrorPopup();
+            }
+        });
+
+        // Error Modal Functions
+        document.getElementById('errorCloseBtn')?.addEventListener('click', function() {
+            closeErrorPopup();
+        });
+
+        document.getElementById('errorOkBtn')?.addEventListener('click', function() {
+            closeErrorPopup();
+        });
+
+        // Close error modal when clicking outside
+        document.getElementById('errorModal')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeErrorPopup();
+            }
+        });
+
+        // Show popup after 7 seconds
+        let popupShown = false;
+        setTimeout(function() {
+            if (!popupShown) {
+                // Check if user hasn't already submitted a form (optional)
+                const hasSubmitted = sessionStorage.getItem('formSubmitted');
+                if (!hasSubmitted) {
+                    openPopupModal();
+                    popupShown = true;
+                }
+            }
+        }, 7000);
+
+        // Mark popup as shown if user navigates away or submits
+        window.addEventListener('beforeunload', function() {
+            sessionStorage.setItem('popupShown', 'true');
+        });
+
+        // Open popup when clicking on "Enquire Now" buttons
+        document.getElementById('mobile-enquire-btn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            openPopupModal();
+        });
+
+        document.getElementById('desktop-enquire-btn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            openPopupModal();
+        });
+
+        document.getElementById('footer-enquire-btn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            openPopupModal();
+        });
+
+        // Open popup when clicking on "Download Brochure" buttons
+        document.getElementById('section5-download-btn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            openPopupModal();
+        });
+
+        document.getElementById('section8-download-btn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            openPopupModal();
+        });
+
+        document.getElementById('footer-download-btn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            openPopupModal();
+        });
+        </script>
+        
         <!-- Mobile: heading 22px, paragraph 13px - last load taaki Tailwind override na kare -->
         <style>
             @media (max-width: 639px) {
