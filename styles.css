@@ -1,0 +1,509 @@
+/* Global: sab jagah font-family Montserrat */
+html,
+body,
+html body *,
+input,
+textarea,
+button,
+select,
+a {
+    font-family: "Montserrat", sans-serif !important;
+}
+
+/* Mobile: sare sections me heading 22px, paragraph 13px - important taaki Tailwind override na kare */
+@media (max-width: 639px) {
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4 {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+    }
+    html body p {
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+    }
+}
+
+/* Mobile: sab sections me padding 20px 12px */
+@media (max-width: 639px) {
+    main section,
+    section {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+}
+
+/* Mobile: Section 3 - Key Highlights maroon background chota + heading thoda niche */
+@media (max-width: 639px) {
+    .section-3-maroon-bg {
+        min-height: 260px !important;
+    }
+}
+
+/* Main navbar - fixed top, scroll par shadow */
+.main-nav {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+.main-nav.nav-scrolled {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile/Tablet nav menu overlay - open state */
+.nav-menu-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+body.nav-menu-open {
+    overflow: hidden;
+}
+
+/* Hamburger button: menu open hone par cross dikhao */
+.nav-hamburger-btn.is-open .nav-hamburger-icon {
+    display: none;
+}
+.nav-hamburger-btn.is-open .nav-close-icon {
+    display: flex;
+}
+.nav-close-icon {
+    display: none;
+}
+
+/* Key Highlights Swiper - pagination dots (original style) */
+.key-highlights-swiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #0000005e;
+    opacity: 1;
+}
+.key-highlights-swiper .swiper-pagination-bullet-active {
+    background: #515151;
+}
+
+/* Key Highlights: dots sab screens par niche - proper show (mobile/tablet zyada, large bhi) */
+.key-highlights-swiper .key-highlights-pagination,
+.key-highlights-swiper .swiper-pagination {
+    margin-top: 1rem !important;
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding-bottom: 4px !important;
+}
+@media (max-width: 1023px) {
+    .key-highlights-swiper .key-highlights-pagination,
+    .key-highlights-swiper .swiper-pagination {
+        margin-top: 1.5rem !important;
+    }
+}
+
+/* Key Highlights: large screen - center + left/right border line */
+@media (min-width: 1024px) {
+    .key-highlights-wrap {
+        max-width: 1240px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        /* border-left: 1px solid #d9d9d9;
+        border-right: 1px solid #d9d9d9; */
+    }
+    /* Jo card center me aaye (middle of 3) uske left/right 1px gray border */
+    .key-highlights-swiper .swiper-slide:nth-child(2),
+    .key-highlights-swiper .swiper-slide:nth-child(5) {
+        border-left: 1px solid #d9d9d9;
+        border-right: 1px solid #d9d9d9;
+    }
+}
+
+/* Global responsive images - sab screens par horizontal overflow na ho */
+img,
+video {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/* Section 5 - Mobile view: mobilesectionbg -5.png as background + andar ke text chote */
+@media (max-width: 639px) {
+    .section-5-floor {
+        background-image: url("img/s5/mobilesectionbg%20-5.png") !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+    .section-5-floor .floor-plan-content p,
+    .section-5-floor .floor-plan-content .font-medium {
+        font-size: 10px !important;
+    }
+    .section-5-floor .floor-plan-content h2 {
+        font-size: 16px !important;
+        line-height: 1.2 !important;
+    }
+    .section-5-floor .floor-plan-content span[class*="font-bold"],
+    .section-5-floor .floor-plan-content span[class*="font-medium"] {
+        font-size: 9px !important;
+    }
+    .section-5-floor .floor-plan-content a.section-5-download-btn,
+    .section-5-floor .floor-plan-content a[class*="section-footer-cta"],
+    .section-5-floor .floor-plan-content a[class*="bg-gradient"] {
+        font-size: 11px !important;
+    }
+    /* Suite boxes: image aur text ke beech gap kam (mobile) */
+    .section-5-floor .floor-plan-content .relative.z-20 > div.flex {
+        gap: 6px !important;
+    }
+}
+
+/* Section 5 - Floor plan: mobile/tablet par maroon overlay = bg image ki full height */
+@media (max-width: 1023px) {
+    section[style*="background-image: url"] {
+        background-size: cover !important;
+        background-position: center right !important;
+    }
+    /* Right column hide karo taaki section height = left (maroon) height = bg image area */
+    .floor-plan-right {
+        display: none !important;
+    }
+    /* Left (maroon) column full width, section jitni height */
+    .floor-plan-left {
+        min-height: 100%;
+    }
+}
+
+/* Mobile: Overview, Floor Plan, Location - inn teen sections ko center show */
+@media (max-width: 639px) {
+    /* Section 2 - Overview (3 cards) */
+    .section-overview-content {
+        text-align: center !important;
+        align-items: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .section-overview-content > div {
+        align-items: center !important;
+        text-align: center !important;
+    }
+    .section-overview-content .flex.flex-col.sm\:flex-row,
+    .section-overview-content .flex-col.sm\:flex-row {
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    /* Section 5 - Floor Plan (suite list + Download Brochure) */
+    .floor-plan-left {
+        align-items: center !important;
+        text-align: center !important;
+    }
+    .floor-plan-content {
+        align-items: center !important;
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .floor-plan-content > *,
+    .floor-plan-content .flex-col,
+    .floor-plan-content a {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+    .floor-plan-content .flex.items-center {
+        justify-content: center !important;
+    }
+
+    /* Section 7 - Location Map features list */
+    .location-map-features {
+        align-items: center !important;
+        text-align: center !important;
+    }
+    .location-map-features .location-map-item,
+    .location-map-features .location-map-item-title,
+    .location-map-features .location-map-item-desc {
+        text-align: center !important;
+    }
+}
+
+/* Section 5 - Download Brochure button: large screen padding 8px 21px */
+@media (min-width: 1024px) {
+    .section-5-download-btn {
+        padding: 8px 21px !important;
+    }
+}
+
+/* Section 6 - Gallery project label text (Project One, Two, etc.) */
+.gallery-project-label {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: capitalize;
+    color: #111111;
+}
+
+/* Section 6 - Gallery heading */
+.gallery-heading {
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: capitalize;
+    color: #111111;
+}
+
+/* Section 7 - Location Map */
+.location-map-subtitle {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-align: center;
+    color: #c9a962;
+}
+
+.location-map-title {
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+@media (min-width: 768px) {
+    .location-map-title {
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .location-map-title {
+        font-size: 36px;
+    }
+}
+
+.location-map-item-title {
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0;
+    color: #ffffff;
+}
+
+.location-map-item-desc {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Section 7 - Location Map: mobile par heading/paragraph same as other sections (22px / 13px) */
+@media (max-width: 639px) {
+    .location-map-subtitle {
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+    }
+    .location-map-title {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+    }
+    .location-map-item-title {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+    }
+    .location-map-item-desc {
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+    }
+}
+
+/* Section 5 - Floor Plan diagonal split */
+@media (min-width: 1024px) {
+    .floor-plan-left {
+        clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+    }
+    .floor-plan-right {
+        clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+        margin-left: -5%;
+    }
+}
+
+/* Section 8 - Free consultation CTA */
+.section-8-headline {
+    font-size: clamp(22px, 5vw, 42px);
+    letter-spacing: 0;
+    text-transform: capitalize;
+}
+
+.section-8-subtext {
+    font-size: clamp(14px, 2.5vw, 18px);
+    line-height: 1.5;
+    letter-spacing: 0;
+}
+
+.section-8-btn {
+    letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+    .section-8 .section-8-text {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-8 .section-8-btn {
+        margin-top: 0.25rem;
+    }
+}
+
+/* Section Footer - Enquire Now form + bottom CTAs */
+.section-footer-card {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.section-footer-title {
+    letter-spacing: 0;
+}
+
+.section-footer-cta {
+    background: linear-gradient(180deg, #fce890 0%, #d29a38 100%);
+    /* box-shadow: 0 4px 14px rgba(210, 154, 56, 0.35); */
+    text-transform: uppercase;
+}
+
+/* .section-footer-cta:hover {
+    box-shadow: 0 6px 20px rgba(210, 154, 56, 0.45);
+} */
+
+/* Desktop: buttons fixed - jiss jagah hai vahi fix (scroll par niche hi rahenge) */
+@media (min-width: 1024px) {
+    .section-footer-cta-wrap {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 40 !important;
+        max-width: 100% !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+    .section-footer-cta {
+        padding: 8px 21px !important;
+    }
+    /* Footer (section-9) ko niche padding - white space na ho, sirf footer scroll */
+    /* .section-9 {
+        padding-bottom: 100px !important;
+    } */
+}
+
+@media (max-width: 639px) {
+    /* Mobile: dono footer CTA + Section 5 Download Brochure - padding 5px 18px */
+    .section-footer-cta,
+    .section-5-download-btn {
+        padding: 5px 18px !important;
+    }
+    /* Mobile: CTA bar bottom par fix - scroll na ho */
+    .section-footer-cta-wrap {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 40 !important;
+        justify-content: center !important;
+        padding: 3px 5px 3px 5px !important;
+    }
+    /* body {
+        padding-bottom: 88px !important;
+    } */
+    /* Mobile: Download.key-highlights-wrap Brochure hide */
+    .section-footer .section-footer-cta-left {
+        display: none !important;
+    }
+    /* Mobile: Enquire Now center me bottom par */
+    .section-footer .section-footer-cta-right {
+        /* width: 100%; */
+        max-width: 280px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* Message field: dashed line + X hint (decorative) */
+.section-footer-message-wrap {
+    position: relative;
+}
+
+.section-footer-message-hint {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.section-footer-message-line {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    top: 50%;
+    height: 0;
+    border-top: 1px dashed rgba(59, 130, 246, 0.5);
+}
+
+.section-footer-message-x {
+    position: relative;
+    z-index: 1;
+    font-size: 1.25rem;
+    line-height: 1;
+    color: rgba(59, 130, 246, 0.6);
+    background: white;
+    padding: 0 0.35rem;
+}
+
+.section-footer-message-wrap:focus-within .section-footer-message-hint {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* Section 9 - Footer (Sky Park branded) */
+.section-9 {
+    background-color: #641235;
+}
+
+.section-9-logo {
+    font-size: clamp(28px, 4vw, 36px);
+    letter-spacing: 0.05em;
+    color: #d4af37;
+}
+
+.section-9-tagline {
+    color: #d4af37;
+    opacity: 0.95;
+    letter-spacing: 0.2em;
+}
+
+.section-9-desc-text {
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.section-9-copy,
+.section-9-credit {
+    color: #cccccc;
+}

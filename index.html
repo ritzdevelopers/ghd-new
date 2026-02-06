@@ -1,263 +1,1218 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>GHD Project</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GHD Project</title>
+        <!-- Montserrat Font (100-700) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- Montserrat Font (100-700) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Lenis JS CDN -->
+        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 
-    <!-- Lenis JS CDN -->
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+        <!-- GSAP CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
-    <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <!-- GSAP ScrollTrigger CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <!-- GSAP ScrollTrigger CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <body class="relative">
+      
 
-<body class="relative">
-
-    <!-- Page Navbar  -->
-    <nav class="w-full h-auto">
-
-    </nav>
-
-
-    <main class="w-full relative">
-
-        <!-- Section 1 Is Starting From Here  -->
-        <section class="w-full h-auto">
-            <img src="img/s1/s1-banner2.jpg" alt="s1-banner2" class="w-full h-auto object-cover">
-        </section>
-
-    </main>
-
-    <!-- Page Sticky Navbar  -->
-    <nav class="w-full h-auto sticky bg-white top-0 z-50 px-[70px] py-[20px]">
-        <!-- Centered Align Container  -->
-        <div class="w-full flex justify-between items-center">
-            <!-- Left Side Container  -->
-            <div class="flex items-center gap-[150px]">
-                <!-- Logo Container  -->
-                <div class="w-auto h-auto">
-                    <img src="img/logo/logo.jpg" alt="ghd-logo" class="w-[197px] h-auto object-cover">
-                </div>
-
-                <!-- Links Container  -->
-                <div class="flex items-center gap-[27px]">
-                    <a href="#" class="font-[500] text-[16px] text-[#515151] cursor-pointer">Home</a>
-                    <a href="#" class="font-[500] text-[16px] text-[#515151] cursor-pointer">Overview</a>
-                    <a href="#" class="font-[500] text-[16px] text-[#515151] cursor-pointer">Highlights</a>
-                    <a href="#" class="font-[500] text-[16px] text-[#515151] cursor-pointer">Amenities</a>
-                    <a href="#" class="font-[500] text-[16px] text-[#515151] cursor-pointer">Gallery</a>
-                    <a href="#" class="font-[500] text-[16px] text-[#515151] cursor-pointer">Location</a>
-                </div>
-            </div>
-            <!-- Right Side Container  -->
-            <div>
+        <!-- Mobile/Tablet menu overlay (nav links + Enquire) -->
+        <div
+            id="nav-menu-overlay"
+            class="nav-menu-overlay fixed inset-0 z-40 bg-white lg:hidden opacity-0 pointer-events-none transition-opacity duration-200"
+            aria-hidden="true"
+        >
+            <div class="flex flex-col h-full pt-20 pb-8 px-6 sm:px-10">
                 <button
-                    class="w-[170px] h-[40px] text-white bg-[#5E0834] uppercase font-[700] text-[16px] cursor-pointer">Enqire
-                    Now</button>
+                    id="nav-menu-close"
+                    type="button"
+                    aria-label="Close menu"
+                    class="absolute top-4 right-4 sm:top-6 sm:right-10 w-10 h-10 flex items-center justify-center text-[#515151] hover:text-[#5E0834] focus:outline-none"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <nav class="flex flex-col gap-6 sm:gap-8 flex-1">
+                    <a href="#" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Home</a>
+                    <a href="#" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Overview</a>
+                    <a href="#" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Highlights</a>
+                    <a href="#" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Amenities</a>
+                    <a href="#" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Gallery</a>
+                    <a href="#" class="nav-menu-link font-[500] text-[18px] sm:text-[20px] text-[#515151] hover:text-[#5E0834]">Location</a>
+                </nav>
+                <a
+                    href="#"
+                    class="nav-menu-link w-full max-w-[280px] h-12 sm:h-14 text-center text-white bg-[#5E0834] uppercase font-[700] text-[16px] flex items-center justify-center hover:bg-[#4a0629] mt-4"
+                >
+                    Enqire Now
+                </a>
             </div>
         </div>
-    </nav>
 
+        <!-- Spacer - navbar height jitna, taaki content niche na chhape -->
+        <!-- <div class="main-nav-spacer h-14 sm:h-16 md:h-20 flex-shrink-0" aria-hidden="true"></div> -->
 
-    <!-- Section 2 Is Starting From Here   -->
-    <section class="w-full min-h-[606px] relative flex justify-center items-center px-[40px]">
-        <!-- Absolute Position Container   -->
-        <div class="absolute right-0 top-0 w-auto h-full z-[-1]"><img src="img/s2/s2-abs-img.png" alt=""
-                class="w-full h-full object-cover"></div>
-        <!-- Container  -->
-        <div class="w-full h-full">
-
-
-
-            <!-- Content Container   -->
-            <div class="w-full h-full flex justify-between items-center">
-
-                <!-- Left Side Container  -->
-                <div class="w-[480px] px-[30px] pt-[59px] pb-[50px] shadow-lg bg-white">
-                    <form class="flex flex-col gap-[35px] text-center w-full">
-                        <h2 class="text-[28px] font-[600] text-black">Enquire Now</h2>
-
-                        <div class="w-full flex flex-col gap-[19px]">
-                            <input type="text" class="w-full h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2"
-                                placeholder="Name">
-                            <input type="text" class="w-full h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2"
-                                placeholder="Email">
-                            <input type="text" class="w-full h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2"
-                                placeholder="Phone">
-
-                            <button class="w-full h-[48px] bg-[#5E0834] text-center">
-                                <p class="text-white text-[16px] font-[700]">Submit</p>
-                            </button>
-                        </div>
-                    </form>
+        <main class="w-full relative">
+            <!-- Section 1 Is Starting From Here  -->
+            <section class="w-full h-auto overflow-hidden">
+                <img
+                    src="img/s1/s1-banner2.jpg"
+                    alt="s1-banner2"
+                    class="w-full h-auto sm:min-h-[280px] md:min-h-[360px] object-cover object-center max-w-full"
+                />
+            </section>
+        </main>
+  <!-- Fixed Navbar - hamesha top par visible, scroll par bhi same jagah -->
+        <nav
+            id="main-nav"
+            class="main-nav sticky top-0 left-0 right-0 w-full h-auto bg-white z-50 px-4 sm:px-6 md:px-10 lg:px-[70px] py-3 sm:py-[20px] transition-shadow duration-200"
+        >
+            <!-- Navbar: logo left, links center, button right; tablet/mobile: logo left, hamburger right -->
+            <div class="w-full flex flex-wrap items-center justify-between gap-2 sm:gap-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:justify-items-stretch">
+                <!-- Left - Logo -->
+                <div class="flex items-center justify-start min-w-0">
+                    <a href="#" class="flex-shrink-0">
+                        <img
+                            src="img/logo/logo.jpg"
+                            alt="ghd-logo"
+                            class="w-24 sm:w-32 md:w-40 lg:w-[197px] h-auto max-w-full object-contain"
+                        />
+                    </a>
                 </div>
 
-                <!-- Right Side Container  -->
-                <div class="flex flex-col gap-[44px]">
+                <!-- Center - Nav links (desktop lg+ only) -->
+                <div class="hidden lg:flex items-center justify-center gap-4 lg:gap-[17px] xl:gap-[27px]">
+                    <a
+                        href="#"
+                        class="font-[500] text-[16px] text-[#515151] cursor-pointer hover:text-[#5E0834] whitespace-nowrap"
+                        >Home</a
+                    >
+                    <a
+                        href="#"
+                        class="font-[500] text-[16px] text-[#515151] cursor-pointer hover:text-[#5E0834] whitespace-nowrap"
+                        >Overview</a
+                    >
+                    <a
+                        href="#"
+                        class="font-[500] text-[16px] text-[#515151] cursor-pointer hover:text-[#5E0834] whitespace-nowrap"
+                        >Highlights</a
+                    >
+                    <a
+                        href="#"
+                        class="font-[500] text-[16px] text-[#515151] cursor-pointer hover:text-[#5E0834] whitespace-nowrap"
+                        >Amenities</a
+                    >
+                    <a
+                        href="#"
+                        class="font-[500] text-[16px] text-[#515151] cursor-pointer hover:text-[#5E0834] whitespace-nowrap"
+                        >Gallery</a
+                    >
+                    <a
+                        href="#"
+                        class="font-[500] text-[16px] text-[#515151] cursor-pointer hover:text-[#5E0834] whitespace-nowrap"
+                        >Location</a
+                    >
+                </div>
 
-                    <!-- Top Container For Text  -->
-                    <div class="flex flex-col gap-[20px]">
-                        <h3 class="text-[36px] font-[600] text-black">Overview</h3>
-                        <p class="text-[16px] font-[400] text-[#515151] max-w-[704px]">
-                            GHD Sky Park brings premium serviced living to the heart of Margao. Choose from fully
-                            furnished suites designed for comfort, convenience, and easy ownership. With lifestyle
-                            amenities and hotel-grade operations, it’s ideal for NRIs, holiday-home buyers, and
-                            investors who want a Goa base without day-to-day maintenance hassles
+                <!-- Right - Hamburger (tablet/mobile) + Enquire (desktop only) -->
+                <div class="flex items-center justify-end min-w-0 gap-2">
+                    <button
+                        id="nav-hamburger"
+                        type="button"
+                        aria-label="Open menu"
+                        class="nav-hamburger-btn lg:hidden flex items-center justify-center w-10 h-10 text-[#515151] hover:text-[#5E0834] focus:outline-none shrink-0 relative"
+                    >
+                        <span class="nav-hamburger-icon inline-flex">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </span>
+                        <span class="nav-close-icon absolute inset-0 items-center justify-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </span>
+                    </button>
+                    <button
+                        class="hidden lg:inline-flex w-full min-w-[120px] sm:w-[140px] md:w-[170px] h-9 sm:h-[40px] text-white bg-[#5E0834] uppercase font-[700] text-[14px] sm:text-[16px] cursor-pointer hover:bg-[#4a0629] flex-shrink-0 items-center justify-center"
+                    >
+                        Enqire Now
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Section 2 Is Starting From Here   -->
+        <section
+            class="w-full min-h-[360px] sm:min-h-[420px] md:min-h-[506px] lg:min-h-[606px] relative flex justify-center items-center px-3 sm:px-5 md:px-6 lg:px-[40px] py-5 sm:py-7 md:py-8 lg:py-10"
+        >
+            <!-- Absolute Position Container - pura section cover, left se right tak -->
+            <div class="absolute inset-0 w-full h-full z-[-1] pointer-events-none">
+                <img
+                    src="img/s2/s2-abs-img.png"
+                    alt=""
+                    class="w-full h-full min-h-[260px] sm:min-h-[300px] object-cover object-right max-w-full"
+                />
+            </div>
+            <!-- Container  -->
+            <div class="w-full max-w-[1400px] mx-auto h-full">
+                <!-- Content Container   -->
+                <div class="w-full h-full flex flex-col lg:flex-row justify-center items-center gap-5 sm:gap-6 md:gap-7 lg:gap-6">
+                    <!-- Left Side Container - Enquire form -->
+                    <div
+                        class="w-full max-w-[480px] px-3 sm:px-5 md:px-6 lg:px-[30px] pt-5 sm:pt-6 md:pt-8 lg:pt-[59px] pb-5 sm:pb-6 lg:pb-[50px] shadow-lg bg-white order-2 lg:order-1 flex-shrink-0"
+                    >
+                        <form
+                            class="flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-[35px] text-center w-full"
+                        >
+                            <h2 class="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[28px] font-[600] text-black">
+                                Enquire Now
+                            </h2>
+
+                            <div class="w-full flex flex-col gap-3 sm:gap-4 lg:gap-[19px]">
+                                <input
+                                    type="text"
+                                    class="w-full h-11 sm:h-12 md:h-[52px] lg:h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2 text-[14px] sm:text-[15px] lg:text-base"
+                                    placeholder="Name"
+                                />
+                                <input
+                                    type="text"
+                                    class="w-full h-11 sm:h-12 md:h-[52px] lg:h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2 text-[14px] sm:text-[15px] lg:text-base"
+                                    placeholder="Email"
+                                />
+                                <input
+                                    type="text"
+                                    class="w-full h-11 sm:h-12 md:h-[52px] lg:h-[58px] border-[1px] border-[#E0E3EB] rounded-[4px] pl-2 text-[14px] sm:text-[15px] lg:text-base"
+                                    placeholder="Phone"
+                                />
+
+                                <button
+                                    class="w-full h-11 sm:h-[44px] lg:h-[48px] bg-[#5E0834] text-center "
+                                >
+                                    <span class="text-white text-[14px] sm:text-[15px] lg:text-[16px] font-[700]">
+                                        Submit
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Right Side Container - Overview -->
+                    <div class="section-overview-content flex flex-col gap-4 sm:gap-5 md:gap-8 lg:gap-[44px] w-full max-w-[704px] order-1 lg:order-2">
+                        <!-- Top Container For Text  -->
+                        <div class="flex flex-col gap-2 sm:gap-3 lg:gap-[20px]">
+                            <h3 class="text-[22px] sm:text-[26px] md:text-[30px] lg:text-[36px] font-[600] text-black leading-tight">
+                                Overview
+                            </h3>
+                            <p
+                                class="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] font-[400] text-[#515151] max-w-full leading-snug"
+                            >
+                                GHD Sky Park brings premium serviced living to
+                                the heart of Margao. Choose from fully furnished
+                                suites designed for comfort, convenience, and
+                                easy ownership. With lifestyle amenities and
+                                hotel-grade operations, it’s ideal for NRIs,
+                                holiday-home buyers, and investors who want a
+                                Goa base without day-to-day maintenance hassles
+                            </p>
+                        </div>
+
+                        <!-- Bottom Container For Static Content - 3 cards -->
+                        <div class="flex flex-col sm:flex-row w-full justify-around gap-3 sm:gap-2 md:gap-4 lg:gap-0">
+                            <!-- Card 1  -->
+                            <div
+                                class="flex flex-col justify-center items-center gap-2 sm:gap-3 lg:gap-[20px] text-center py-3 sm:py-5 md:py-6 lg:py-8"
+                            >
+                                <div class="w-7 sm:w-8 lg:w-[38px] flex-shrink-0">
+                                    <img
+                                        src="svg/s2/s2-location.svg"
+                                        alt=""
+                                        class="w-full h-auto max-w-full object-contain"
+                                    />
+                                </div>
+                                <p class="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] font-[500] leading-snug">
+                                    Central Margao, <br />
+                                    South Goa
+                                </p>
+                            </div>
+
+                            <!-- Card 2  -->
+                            <div
+                                class="flex flex-col justify-center items-center gap-2 sm:gap-3 lg:gap-[20px] text-center px-3 sm:px-5 md:px-8 lg:px-10 py-3 sm:py-5 md:py-6 lg:py-8 border-t border-b sm:border-t-0 sm:border-b-0 sm:border-l-[1px] sm:border-r-[1px] border-[#D9D9D9]"
+                            >
+                                <div class="w-7 sm:w-8 lg:w-[38px] flex-shrink-0">
+                                    <img
+                                        src="svg/s2/s2-hand.svg"
+                                        alt=""
+                                        class="w-full h-auto max-w-full object-contain"
+                                    />
+                                </div>
+                                <p class="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] font-[500] leading-snug">
+                                    270+ serviced suites <br />
+                                    (Studios, 1 BHK, 2 BHK)
+                                </p>
+                            </div>
+
+                            <!-- Card 3  -->
+                            <div
+                                class="flex flex-col justify-center items-center gap-2 sm:gap-3 lg:gap-[20px] text-center py-3 sm:py-5 md:py-6 lg:py-8"
+                            >
+                                <div class="w-7 sm:w-8 lg:w-[38px] flex-shrink-0">
+                                    <img
+                                        src="svg/s2/s2-goal.svg"
+                                        alt=""
+                                        class="w-full h-auto max-w-full object-contain"
+                                    />
+                                </div>
+                                <p class="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] font-[500] leading-snug">
+                                    Targeted by Dec 2029 <br />
+                                    (as per project plan)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3 Is Starting From Here    -->
+        <section
+            class="w-full flex flex-col gap-8 sm:gap-12 lg:gap-[58px] justify-center items-center relative pt-10 sm:pt-14 lg:pt-[70px] pb-8 sm:pb-10 lg:pb-[53px] px-4 sm:px-6"
+        >
+            <!-- Absolute Position Container  -->
+            <div
+                class="section-3-maroon-bg w-full min-h-[500px] sm:min-h-[550px] lg:h-[628px] bg-[#5E0834] absolute top-0 left-0 z-[-1]"
+            ></div>
+
+            <!-- Center Align Container 1  -->
+            <div
+                class="w-full max-w-[1200px] mx-auto flex flex-col justify-center items-center gap-6 sm:gap-[38px]"
+            >
+                <!-- Top Text Container  -->
+                <div
+                    class="w-full flex flex-col justify-center items-center text-center gap-4 sm:gap-[20px]"
+                >
+                    <h3
+                        class="text-[28px] sm:text-[32px] lg:text-[36px] font-[600] bg-gradient-to-b from-[#FCE890] to-[#D29A38] text-transparent bg-clip-text"
+                    >
+                        Our Story
+                    </h3>
+                    <p
+                        class="text-[14px] sm:text-[16px] font-[400] text-[#ffffff] max-w-[904px] w-full px-2"
+                    >
+                        GHD Sky Park brings premium serviced living to the heart
+                        of Margao. Choose from fully furnished suites designed
+                        for comfort, convenience, and easy ownership. With
+                        lifestyle amenities and hotel-grade operations
+                    </p>
+                </div>
+
+                <!-- Bottom Video Container  -->
+                <div class="w-full max-w-[997px] overflow-hidden rounded-sm">
+                    <video
+                        src="img/s3/ghd-video.mp4"
+                        class="w-full h-auto max-w-full object-cover"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                    ></video>
+                </div>
+            </div>
+
+            <!-- Center Align Container 2 - large: center + left/right border -->
+            <div
+                class="key-highlights-wrap w-full flex flex-col justify-center items-center text-center px-2 sm:mt-10 gap-6 sm:gap-[38px]"
+            >
+                <h2 class="font-[600] text-[24px] sm:text-[30px] lg:text-[36px] text-[#111111] ">
+                    Key Highlights
+                </h2>
+
+                <!-- Key Highlights Swiper: mobile 1, tablet 2, large 3 -->
+                <div class="key-highlights-swiper swiper w-full max-w-[1192px] mx-auto">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="p-2 w-full max-w-[340px] mx-auto lg:mx-0">
+                                <div class="w-full flex flex-col justify-center items-center gap-3">
+                                    <div class="w-16 sm:w-20 lg:w-[100px] flex-shrink-0">
+                                        <img src="img/s3/s3-home.png" alt="" class="w-full h-auto max-w-full object-contain" />
+                                    </div>
+                                    <div class="flex flex-col justify-center items-center gap-2 text-center">
+                                        <h4 class="text-[16px] sm:text-[18px] font-[600] text-[#111111]">Ready-to-move-in options</h4>
+                                        <p class="text-[14px] sm:text-[16px] font-[400] text-[#515151]">Select 1 & 2 BHK homes available for immediate comfort and quick handover.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="p-2 w-full max-w-[340px] mx-auto lg:mx-0">
+                                <div class="w-full flex flex-col justify-center items-center gap-3">
+                                    <div class="w-16 sm:w-20 lg:w-[100px] flex-shrink-0">
+                                        <img src="img/s3/s3-home.png" alt="" class="w-full h-auto max-w-full object-contain" />
+                                    </div>
+                                    <div class="flex flex-col justify-center items-center gap-2 text-center">
+                                        <h4 class="text-[16px] sm:text-[18px] font-[600] text-[#111111]">Ready-to-move-in options</h4>
+                                        <p class="text-[14px] sm:text-[16px] font-[400] text-[#515151]">Select 1 & 2 BHK homes available for immediate comfort and quick handover.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="p-2 w-full max-w-[340px] mx-auto lg:mx-0">
+                                <div class="w-full flex flex-col justify-center items-center gap-3">
+                                    <div class="w-16 sm:w-20 lg:w-[100px] flex-shrink-0">
+                                        <img src="img/s3/s3-home.png" alt="" class="w-full h-auto max-w-full object-contain" />
+                                    </div>
+                                    <div class="flex flex-col justify-center items-center gap-2 text-center">
+                                        <h4 class="text-[16px] sm:text-[18px] font-[600] text-[#111111]">Ready-to-move-in options</h4>
+                                        <p class="text-[14px] sm:text-[16px] font-[400] text-[#515151]">Select 1 & 2 BHK homes available for immediate comfort and quick handover.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Duplicate slides: large screen par teeno ek saath slide ho (6 slides = 2 pages) -->
+                        <div class="swiper-slide">
+                            <div class="p-2 w-full max-w-[340px] mx-auto lg:mx-0">
+                                <div class="w-full flex flex-col justify-center items-center gap-3">
+                                    <div class="w-16 sm:w-20 lg:w-[100px] flex-shrink-0">
+                                        <img src="img/s3/s3-home.png" alt="" class="w-full h-auto max-w-full object-contain" />
+                                    </div>
+                                    <div class="flex flex-col justify-center items-center gap-2 text-center">
+                                        <h4 class="text-[16px] sm:text-[18px] font-[600] text-[#111111]">Ready-to-move-in options</h4>
+                                        <p class="text-[14px] sm:text-[16px] font-[400] text-[#515151]">Select 1 & 2 BHK homes available for immediate comfort and quick handover.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="p-2 w-full max-w-[340px] mx-auto lg:mx-0">
+                                <div class="w-full flex flex-col justify-center items-center gap-3">
+                                    <div class="w-16 sm:w-20 lg:w-[100px] flex-shrink-0">
+                                        <img src="img/s3/s3-home.png" alt="" class="w-full h-auto max-w-full object-contain" />
+                                    </div>
+                                    <div class="flex flex-col justify-center items-center gap-2 text-center">
+                                        <h4 class="text-[16px] sm:text-[18px] font-[600] text-[#111111]">Ready-to-move-in options</h4>
+                                        <p class="text-[14px] sm:text-[16px] font-[400] text-[#515151]">Select 1 & 2 BHK homes available for immediate comfort and quick handover.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="p-2 w-full max-w-[340px] mx-auto lg:mx-0">
+                                <div class="w-full flex flex-col justify-center items-center gap-3">
+                                    <div class="w-16 sm:w-20 lg:w-[100px] flex-shrink-0">
+                                        <img src="img/s3/s3-home.png" alt="" class="w-full h-auto max-w-full object-contain" />
+                                    </div>
+                                    <div class="flex flex-col justify-center items-center gap-2 text-center">
+                                        <h4 class="text-[16px] sm:text-[18px] font-[600] text-[#111111]">Ready-to-move-in options</h4>
+                                        <p class="text-[14px] sm:text-[16px] font-[400] text-[#515151]">Select 1 & 2 BHK homes available for immediate comfort and quick handover.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination key-highlights-pagination mt-6"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4 - Amenities -->
+        <section
+            class="w-full py-[60px] md:py-[80px] px-4 md:px-8 bg-[#FDF5F8]"
+        >
+            <div
+                class="w-full max-w-[1200px] mx-auto flex flex-col justify-center items-center gap-[48px]"
+            >
+                <!-- Title -->
+                <h2
+                    class="font-['Montserrat'] font-semibold text-[36px] leading-[100%] tracking-normal text-center capitalize text-[#111111]"
+                >
+                    Amenities
+                </h2>
+
+                <!-- Amenities Grid - 2 cols mobile, 4 cols tablet, 5 cols desktop (last row centered) -->
+                <div
+                    class="w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 justify-items-center gap-4 md:gap-6"
+                >
+                    <!-- Card 1 - Clubhouse -->
+                    <div
+                        class="w-full min-w-[120px] max-w-[220px] aspect-square bg-white shadow-[0_4px_16px_0_rgba(0,0,0,0.1)] flex flex-col justify-center items-center gap-3 md:gap-4 p-4 md:p-6"
+                    >
+                        <div class="w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
+                            <img
+                                src="img/s4/s4-clubhouuse.png"
+                                alt="Clubhouse"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                        <p
+                            class="font-['Montserrat'] font-normal text-[16px] leading-[100%] tracking-normal text-center uppercase text-[#515151]"
+                        >
+                            Clubhouse
                         </p>
                     </div>
 
-                    <!-- Bottom Container For Static Content  -->
-                    <div class="flex w-full justify-around">
+                    <!-- Card 2 - Swimming Pool -->
+                    <div
+                        class="w-full min-w-[120px] max-w-[220px] aspect-square bg-white shadow-[0_4px_16px_0_rgba(0,0,0,0.1)] flex flex-col justify-center items-center gap-3 md:gap-4 p-4 md:p-6"
+                    >
+                        <div class="w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
+                            <img
+                                src="img/s4/s4-clubhouuse.png"
+                                alt="Swimming Pool"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                        <p
+                            class="font-['Montserrat'] font-normal text-[16px] leading-[100%] tracking-normal text-center uppercase text-[#515151]"
+                        >
+                            Swimming Pool
+                        </p>
+                    </div>
 
-                        <!-- Card 1  -->
-                        <div class="flex flex-col justify-center items-center gap-[20px] text-center py-8">
-                            <div class="w-[38px]">
-                                <img src="svg/s2/s2-location.svg" alt="" class="w-full h-auto object-cover">
-                            </div>
-                            <p class="text-[16px] font-[500]">Central Margao, <br> South Goa</p>
+                    <!-- Card 3 - Gym -->
+                    <div
+                        class="w-full min-w-[120px] max-w-[220px] aspect-square bg-white shadow-[0_4px_16px_0_rgba(0,0,0,0.1)] flex flex-col justify-center items-center gap-3 md:gap-4 p-4 md:p-6"
+                    >
+                        <div class="w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
+                            <img
+                                src="img/s4/s4-clubhouuse.png"
+                                alt="Gym"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                        <p
+                            class="font-['Montserrat'] font-normal text-[16px] leading-[100%] tracking-normal text-center uppercase text-[#515151]"
+                        >
+                            Gym
+                        </p>
+                    </div>
+
+                    <!-- Card 4 - SPA & Wellness -->
+                    <div
+                        class="w-full min-w-[120px] max-w-[220px] aspect-square bg-white shadow-[0_4px_16px_0_rgba(0,0,0,0.1)] flex flex-col justify-center items-center gap-3 md:gap-4 p-4 md:p-6"
+                    >
+                        <div class="w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
+                            <img
+                                src="img/s4/s4-clubhouuse.png"
+                                alt="SPA & Wellness"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                        <p
+                            class="font-['Montserrat'] font-normal text-[16px] leading-[100%] tracking-normal text-center uppercase text-[#515151]"
+                        >
+                            SPA & Wellness
+                        </p>
+                    </div>
+
+                    <!-- Card 5 - 24x7 Security -->
+                    <div
+                        class="w-full min-w-[120px] max-w-[220px] aspect-square bg-white shadow-[0_4px_16px_0_rgba(0,0,0,0.1)] flex flex-col justify-center items-center gap-3 md:gap-4 p-4 md:p-6"
+                    >
+                        <div class="w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
+                            <img
+                                src="img/s4/s4-clubhouuse.png"
+                                alt="24x7 Security"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                        <p
+                            class="font-['Montserrat'] font-normal text-[16px] leading-[100%] tracking-normal text-center uppercase text-[#515151]"
+                        >
+                            24x7 Security
+                        </p>
+                    </div>
+
+                    <!-- Card 6 - Reception (starts col 2 on lg to center last row) -->
+                    <div
+                        class="w-full min-w-[120px] max-w-[220px] aspect-square bg-white shadow-[0_4px_16px_0_rgba(0,0,0,0.1)] flex flex-col justify-center items-center gap-3 md:gap-4 p-4 md:p-6 lg:col-start-2"
+                    >
+                        <div class="w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
+                            <img
+                                src="img/s4/s4-clubhouuse.png"
+                                alt="Reception"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                        <p
+                            class="font-['Montserrat'] font-normal text-[16px] leading-[100%] tracking-normal text-center uppercase text-[#515151]"
+                        >
+                            Reception
+                        </p>
+                    </div>
+
+                    <!-- Card 7 - Lounge Spaces -->
+                    <div
+                        class="w-full min-w-[120px] max-w-[220px] aspect-square bg-white shadow-[0_4px_16px_0_rgba(0,0,0,0.1)] flex flex-col justify-center items-center gap-3 md:gap-4 p-4 md:p-6"
+                    >
+                        <div class="w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
+                            <img
+                                src="img/s4/s4-clubhouuse.png"
+                                alt="Lounge Spaces"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                        <p
+                            class="font-['Montserrat'] font-normal text-[16px] leading-[100%] tracking-normal text-center uppercase text-[#515151]"
+                        >
+                            Lounge Spaces
+                        </p>
+                    </div>
+
+                    <!-- Card 8 - Premium Conveniences -->
+                    <div
+                        class="w-full min-w-[120px] max-w-[220px] aspect-square bg-white shadow-[0_4px_16px_0_rgba(0,0,0,0.1)] flex flex-col justify-center items-center gap-3 md:gap-4 p-4 md:p-6"
+                    >
+                        <div class="w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
+                            <img
+                                src="img/s4/s4-clubhouuse.png"
+                                alt="Premium Conveniences"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
+                        <p
+                            class="font-['Montserrat'] font-normal text-[16px] leading-[100%] tracking-normal text-center uppercase text-[#515151]"
+                        >
+                            Premium<br />Conveniences
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5 - Floor Plan (floor image bg aage tak, box width badi) -->
+        <section
+            class="section-5-floor w-full relative overflow-hidden min-h-[600px] lg:min-h-[700px] bg-no-repeat"
+            style="
+                background-image: url(&quot;img/s5/floorbg.png&quot;);
+                background-position: right center;
+                background-size: 120% auto;
+            "
+        >
+            <div
+                class="w-full grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] min-h-[600px] lg:min-h-[700px]"
+            >
+                <!-- Left Section - Semi-transparent maroon overlay (floor image shows through) -->
+                <div
+                    class="floor-plan-left relative w-full lg:min-w-0 px-4 py-8 sm:px-6 sm:py-12 md:px-10 md:py-16 lg:px-14 xl:px-20 lg:py-10 flex flex-col justify-center order-1 overflow-hidden"
+                    
+                >
+                    <!-- Dotted pattern overlay (s5-elips) - positioned top left -->
+                    <div
+                        class="absolute top-0 left-0 right-0 bottom-0 opacity-[0.1] pointer-events-none"
+                        style="
+                            background-image: url(&quot;img/s5/s5-elips.png&quot;);
+                            background-repeat: repeat;
+                            background-size: 24px 24px;
+                            background-position: left top;
+                        "
+                    ></div>
+
+                    <div
+                        class="floor-plan-content relative z-20 flex flex-col gap-4 sm:gap-6 md:gap-8 w-full max-w-[900px]"
+                    >
+                        <!-- Floor Plan heading -->
+                        <p
+                            class="font-['Montserrat'] font-medium text-[12px] sm:text-[14px] leading-[100%] tracking-[0.1em] capitalize bg-gradient-to-b from-[#FCE890] to-[#D29A38] bg-clip-text text-transparent"
+                        >
+                            Floor Plan
+                        </p>
+
+                        <!-- Main Title -->
+                        <div class="flex flex-col gap-1">
+                            <h2
+                                class="w-full max-w-full font-['Montserrat'] font-bold text-[22px] sm:text-[28px] md:text-[34px] lg:text-[36px] leading-[110%] tracking-normal capitalize text-white"
+                            >
+                                Choose The Suite That Fits Your
+                            </h2>
+                            <h2
+                                class="font-['Montserrat'] font-bold text-[22px] sm:text-[28px] md:text-[34px] lg:text-[39px] leading-[110%] tracking-normal capitalize bg-gradient-to-b from-[#FCE890] to-[#D29A38] bg-clip-text text-transparent"
+                            >
+                                Goa Lifestyle
+                            </h2>
                         </div>
 
-                        <!-- Card 2  -->
+                        <!-- Suite Options List - mobile par text chota -->
+                        <div class="flex flex-col gap-3 sm:gap-4 md:gap-3 relative z-20 w-full">
+
+    <!-- Studio Suite -->
+    <div
+        class="flex items-center gap-3 sm:gap-4 md:gap-5 
+               w-full max-w-[350px] lg:max-w-[405px] min-w-0 
+               px-2 py-1 sm:px-5 sm:py-4 md:px-3 md:py-2 
+               bg-[#FFFFFF] shadow-sm"
+    >
+        <img
+            src="svg/check-double-line-black.svg"
+            alt=""
+            class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
+        />
+        <span class="inline-flex flex-nowrap items-baseline gap-1.5 flex-1 min-w-0 overflow-hidden">
+            <span
+                class="inline font-['Montserrat'] font-bold text-[14px] sm:text-[16px] lg:text-[13px] leading-[100%] capitalize text-[#111111] shrink-0"
+            >
+                Studio Suite
+            </span>
+            <span
+                class="inline font-['Montserrat'] font-medium text-[14px] sm:text-[16px] lg:text-[13px] leading-[100%] capitalize text-[#111111] shrink-0"
+            >
+                (Total Area: 653.10 Sq. Ft)
+            </span>
+        </span>
+    </div>
+
+    <!-- Studio Premium Suite -->
+    <div
+        class="flex items-center gap-3 sm:gap-4 md:gap-5 
+               w-full max-w-[350px] lg:max-w-[405px] min-w-0 
+               px-2 py-1 sm:px-5 sm:py-4 md:px-3 md:py-2 
+               bg-[#FFFFFF] shadow-sm"
+    >
+        <img
+            src="svg/check-double-line-black.svg"
+            alt=""
+            class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
+        />
+        <span class="inline-flex flex-nowrap items-baseline gap-1.5 flex-1 min-w-0 overflow-hidden">
+            <span class="inline font-['Montserrat'] font-bold text-[14px] sm:text-[16px] lg:text-[13px] leading-[100%] capitalize text-[#111111] shrink-0">
+                Studio Premium Suite
+            </span>
+            <span class="inline font-['Montserrat'] font-medium text-[14px] sm:text-[16px] lg:text-[13px] leading-[100%] capitalize text-[#111111] shrink-0">
+                (Total Area: 787.70 Sq. Ft)
+            </span>
+        </span>
+    </div>
+
+    <!-- 1 BHK Standard Suite -->
+    <div
+        class="flex items-center gap-3 sm:gap-4 md:gap-5 
+               w-full max-w-[350px] lg:max-w-[405px] min-w-0 
+               px-2 py-1 sm:px-5 sm:py-4 md:px-3 md:py-2 
+               bg-[#FFFFFF] shadow-sm"
+    >
+        <img
+            src="svg/check-double-line-black.svg"
+            alt=""
+            class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
+        />
+        <span class="inline-flex flex-nowrap items-baseline gap-1.5 flex-1 min-w-0 overflow-hidden">
+            <span class="inline font-['Montserrat'] font-bold text-[14px] sm:text-[16px] lg:text-[13px] leading-[100%] capitalize text-[#111111] shrink-0">
+                1 BHK Standard Suite
+            </span>
+            <span class="inline font-['Montserrat'] font-medium text-[14px] sm:text-[16px] lg:text-[13px] leading-[100%] capitalize text-[#111111] shrink-0">
+                (Total Area: 925.88 Sq. Ft)
+            </span>
+        </span>
+    </div>
+
+    <!-- 1 BHK Premium Suite -->
+    <div
+        class="flex items-center gap-3 sm:gap-4 md:gap-5 
+               w-full max-w-[350px] lg:max-w-[405px] min-w-0 
+               px-2 py-1 sm:px-5 sm:py-4 md:px-3 md:py-2 
+               bg-[#FFFFFF] shadow-sm"
+    >
+        <img
+            src="svg/check-double-line-black.svg"
+            alt=""
+            class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
+        />
+        <span class="inline-flex flex-nowrap items-baseline gap-1.5 flex-1 min-w-0 overflow-hidden">
+            <span class="inline font-['Montserrat'] font-bold text-[14px] sm:text-[16px] lg:text-[13px] leading-[100%] capitalize text-[#111111] shrink-0">
+                1 BHK Premium Suite
+            </span>
+            <span class="inline font-['Montserrat'] font-medium text-[14px] sm:text-[16px] lg:text-[13px] leading-[100%] capitalize text-[#111111] shrink-0">
+                (Total Area: 1,146.00 Sq. Ft)
+            </span>
+        </span>
+    </div>
+
+    <!-- 2 BHK Suite -->
+    <div
+        class="flex items-center gap-3 sm:gap-4 md:gap-5 
+               w-full max-w-[350px] lg:max-w-[405px] min-w-0 
+               px-2 py-1 sm:px-5 sm:py-4 md:px-3 md:py-2 
+               bg-[#FFFFFF] shadow-sm"
+    >
+        <img
+            src="svg/check-double-line-black.svg"
+            alt=""
+            class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
+        />
+        <span class="inline-flex flex-nowrap items-baseline gap-1.5 flex-1 min-w-0 overflow-hidden">
+            <span class="inline font-['Montserrat'] font-bold text-[14px] sm:text-[16px] lg:text-[13px] leading-[100%] capitalize text-[#111111] shrink-0">
+                2 BHK Suite
+            </span>
+            <span class="inline font-['Montserrat'] font-medium text-[14px] sm:text-[16px] lg:text-[13px] leading-[100%] capitalize text-[#111111] shrink-0">
+                (Total Area: 1,301.58 Sq. Ft)
+            </span>
+        </span>
+    </div>
+
+</div>
+
+
+                        <!-- Download Brochure Button - mobile par chota -->
+                        <a
+                            href="#"
+                            class="section-5-download-btn w-max px-3 py-3 sm:px-3 sm:py-2 mt-1 sm:mt-2 text-center text-[14px] sm:text-[16px] font-bold leading-6 text-white bg-gradient-to-b from-[#FCE890] to-[#D29A38] hover:opacity-90 transition-opacity cursor-pointer"
+                            style="
+                                font-family: Montserrat, sans-serif;
+                                letter-spacing: 0px;
+                            "
+                        >
+                            Download Brochure
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Section - Floor image visible (from section background) -->
+                <div
+                    class="floor-plan-right relative w-full min-h-[400px] lg:min-h-[700px] order-2"
+                    aria-hidden="true"
+                ></div>
+            </div>
+        </section>
+
+        <!--section-6 is starting from here-->
+        <section
+            class="w-full bg-white py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-[70px]"
+        >
+            <div class="w-full max-w-[1400px] mx-auto">
+                <h2 class="gallery-heading mb-8 md:mb-10 lg:mb-12">Gallery</h2>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6"
+                >
+                    <div
+                        class="gallery-item group relative w-full overflow-hidden rounded-sm aspect-[4/3] bg-gray-100"
+                    >
+                        <img
+                            src="img/s6/s6-i1-s6-i1.jpg"
+                            alt="Project One"
+                            class="w-full h-full object-cover"
+                        />
                         <div
-                            class="flex flex-col justify-center items-center gap-[20px] text-center px-10 py-8 border-l-[1px] border-r-[1px] border-[#D9D9D9]">
-                            <div class="w-[38px]">
-                                <img src="svg/s2/s2-hand.svg" alt="" class="w-full h-auto object-cover">
-                            </div>
-                            <p class="text-[16px] font-[500]">270+ serviced suites <br> (Studios, 1 BHK, 2 BHK)</p>
+                            class="absolute inset-0 flex items-center justify-center pointer-events-none"
+                        >
+                            <span
+                                class="gallery-project-label bg-white/70 px-14 py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm font-['Montserrat'] font-medium text-[16px] leading-[100%] tracking-normal text-center capitalize text-[#111111]"
+                                >Project One</span
+                            >
                         </div>
-
-
-                        <!-- Card 3  -->
-                        <div class="flex flex-col justify-center items-center gap-[20px] text-center  py-8">
-                            <div class="w-[38px]">
-                                <img src="svg/s2/s2-goal.svg" alt="" class="w-full h-auto object-cover">
-                            </div>
-                            <p class="text-[16px] font-[500]">Targeted by Dec 2029 <br> (as per project plan)</p>
+                    </div>
+                    <div
+                        class="gallery-item group relative w-full overflow-hidden rounded-sm aspect-[4/3] bg-gray-100"
+                    >
+                        <img
+                            src="img/s6/s6-i1-s6-i4.jpg"
+                            alt="Gallery"
+                            class="w-full h-full object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center pointer-events-none"
+                        >
+                            <span
+                                class="gallery-project-label bg-white/70 px-14 py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm font-['Montserrat'] font-medium text-[16px] leading-[100%] tracking-normal text-center capitalize text-[#111111]"
+                                >Project Two</span
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="gallery-item group relative w-full overflow-hidden rounded-sm aspect-[4/3] bg-gray-100"
+                    >
+                        <img
+                            src="img/s6/s6-i1-s6-i5.jpg"
+                            alt="Gallery"
+                            class="w-full h-full object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center pointer-events-none"
+                        >
+                            <span
+                                class="gallery-project-label bg-white/70 px-14 py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm font-['Montserrat'] font-medium text-[16px] leading-[100%] tracking-normal text-center capitalize text-[#111111]"
+                                >Project Three</span
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="gallery-item group relative w-full overflow-hidden rounded-sm aspect-[4/3] bg-gray-100"
+                    >
+                        <img
+                            src="img/s6/s6-i1-s6-i6.jpg"
+                            alt="Gallery"
+                            class="w-full h-full object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center pointer-events-none"
+                        >
+                            <span
+                                class="gallery-project-label bg-white/70 px-14 py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm font-['Montserrat'] font-medium text-[16px] leading-[100%] tracking-normal text-center capitalize text-[#111111]"
+                                >Project Four</span
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="gallery-item group relative w-full overflow-hidden rounded-sm aspect-[4/3] bg-gray-100"
+                    >
+                        <img
+                            src="img/s6/s6-i1-s6-i1.jpg"
+                            alt="Gallery"
+                            class="w-full h-full object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center pointer-events-none"
+                        >
+                            <span
+                                class="gallery-project-label bg-white/70 px-14 py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm font-['Montserrat'] font-medium text-[16px] leading-[100%] tracking-normal text-center capitalize text-[#111111]"
+                                >Project Five</span
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="gallery-item group relative w-full overflow-hidden aspect-[4/3] bg-gray-100"
+                    >
+                        <img
+                            src="img/s6/s6-i1-s6-i4.jpg"
+                            alt="Gallery"
+                            class="w-full h-full object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center pointer-events-none px-15"
+                        >
+                            <span
+                                class="gallery-project-label bg-white/70 px-14 py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm font-['Montserrat'] font-medium text-[16px] leading-[100%] tracking-normal text-center capitalize text-[#111111]"
+                                >Project Six</span
+                            >
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-
-    <!-- Section 3 Is Starting From Here    -->
-    <section class="w-full flex flex-col gap-[58px] justify-center items-center relative pt-[70px] pb-[53px]">
-
-        <!-- Absolute Position Container  -->
-        <div class="w-full h-[628px] bg-[#5E0834] absolute top-0 left-0 z-[-1]"></div>
-
-        <!-- Center Align Container 1  -->
-        <div class="w-full flex flex-col justify-center items-center gap-[38px]">
-            <!-- Top Text Container  -->
-            <div class="w-full flex flex-col justify-center items-center text-center gap-[20px]">
-                <h3
-                    class="text-[36px] font-[600] bg-gradient-to-b from-[#FCE890] to-[#D29A38] text-transparent bg-clip-text">
-                    Our Story</h3>
-                <p class="text-[16px] font-[400] text-[#ffffff] max-w-[904px]">
-                    GHD Sky Park brings premium serviced living to the heart of Margao. Choose from fully furnished
-                    suites designed for comfort, convenience, and easy ownership. With lifestyle amenities and
-                    hotel-grade operations
+        <!--section -7 is starting from here-->
+        <section
+            class="w-full bg-[#1A0610] py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-[70px]"
+        >
+            <div class="w-full max-w-[1400px] mx-auto">
+                <!-- Heading area -->
+                <p
+                    class="location-map-subtitle mb-2 text-center font-['Montserrat'] font-medium text-[16px] leading-[100%] tracking-[0.1em] bg-gradient-to-b from-[#FCE890] to-[#D29A38] bg-clip-text text-transparent"
+                >
+                    Location Map
                 </p>
+                <h2
+                    class="location-map-title mb-10 md:mb-14 lg:mb-16 text-center font-['Montserrat'] font-semibold text-[36px] leading-[100%] tracking-[0px] capitalize"
+                >
+                    Central Margao, With South Goa At Your Doorstep
+                </h2>
+
+                <!-- Two columns: Map (left) + Features list (right) -->
+                <div
+                    class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start"
+                >
+                    <!-- Left - Map -->
+                    <div
+                        class="w-full overflow-hidden bg-gray-800 aspect-[4/3] lg:aspect-auto lg:min-h-[400px] h-[-webkit-fill-available]"
+                    >
+                        <img
+                            src="img/s7/s7-map.jpg"
+                            alt="Location Map - Central Margao"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+
+                    <!-- Right - Features list -->
+                    <div class="location-map-features w-full flex flex-col">
+                        <div
+                            class="location-map-item border-b border-[#c9a962]/60 pb-6 mb-6"
+                        >
+                            <h3
+                                class="location-map-item-title mb-2 font-['Montserrat'] font-semibold text-[20px] leading-[100%] tracking-[0px] capitalize text-[#FFFFFF]"
+                            >
+                                Prime Urban Location
+                            </h3>
+                            <p
+                                class="location-map-item-desc font-['Montserrat'] font-normal text-[16px] leading-[24px] tracking-[0px] capitalize text-[#ffffff]"
+                            >
+                                Located In Central Margao With Easy Access To
+                                Shopping, Business Areas, And Civic Amenities.
+                            </p>
+                        </div>
+                        <div
+                            class="location-map-item border-b border-[#c9a962]/60 pb-6 mb-6"
+                        >
+                            <h3
+                                class="location-map-item-title mb-2 font-['Montserrat'] font-semibold text-[20px] leading-[100%] tracking-[0px] capitalize text-[#FFFFFF]"
+                            >
+                                Excellent Connectivity
+                            </h3>
+                            <p
+                                class="location-map-item-desc font-['Montserrat'] font-normal text-[16px] leading-[24px] tracking-[0px] capitalize text-[#ffffff]"
+                            >
+                                Well Connected To Key Routes, Rail Access, And
+                                Daily Travel Points.
+                            </p>
+                        </div>
+                        <div
+                            class="location-map-item border-b border-[#c9a962]/60 pb-6 mb-6"
+                        >
+                            <h3
+                                class="location-map-item-title mb-2 font-['Montserrat'] font-semibold text-[20px] leading-[100%] tracking-[0px] capitalize text-[#FFFFFF]"
+                            >
+                                Close To Pristine Beaches
+                            </h3>
+                            <p
+                                class="location-map-item-desc font-['Montserrat'] font-normal text-[16px] leading-[24px] tracking-[0px] capitalize text-[#ffffff]"
+                            >
+                                Popular Beaches Like Colva Beach, Benaulim
+                                Beach, And Betalbatim Beach Are A Short Drive
+                                Away.
+                            </p>
+                        </div>
+                        <div
+                            class="location-map-item border-b border-[#c9a962]/60 pb-6 mb-6"
+                        >
+                            <h3
+                                class="location-map-item-title mb-2 font-['Montserrat'] font-semibold text-[20px] leading-[100%] tracking-[0px] capitalize text-[#FFFFFF]"
+                            >
+                                Education & Healthcare Nearby
+                            </h3>
+                            <p
+                                class="location-map-item-desc font-['Montserrat'] font-normal text-[16px] leading-[24px] tracking-[0px] capitalize text-[#ffffff]"
+                            >
+                                Surrounded By Reputable Schools, Colleges, And
+                                Top Hospitals For Everyday Convenience.
+                            </p>
+                        </div>
+                        <div class="location-map-item pb-0 mb-0">
+                            <h3
+                                class="location-map-item-title mb-2 font-['Montserrat'] font-semibold text-[20px] leading-[100%] tracking-[0px] capitalize text-[#FFFFFF]"
+                            >
+                                Lifestyle & Leisure Nearby
+                            </h3>
+                            <p
+                                class="location-map-item-desc font-['Montserrat'] font-normal text-[16px] leading-[24px] tracking-[0px] capitalize text-[#ffffff]"
+                            >
+                                Malls, Cafés, Restaurants, And Markets Close
+                                Enough For Effortless Living.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--section -8 - Free consultation CTA -->
+        <section class="section-8 relative w-full min-h-[45vh] sm:min-h-[50vh] md:min-h-[55vh] lg:min-h-[65vh] flex items-center">
+            <!-- Background image -->
+            <div class="absolute inset-0 z-0 mt-6 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10 overflow-hidden">
+                <img
+                    src="img/s8/s8-i1.jpg"
+                    alt=""
+                    class="w-full h-full min-h-[280px] sm:min-h-[300px] object-cover object-center max-w-full"
+                />
+            </div>
+            <!-- Content -->
+            <div class="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-[70px] py-8 sm:py-10 md:py-14 lg:py-20">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-5 sm:gap-6 md:gap-8 lg:gap-12 text-center md:text-left">
+                    <!-- Text block - mobile/tablet par center, desktop par left -->
+                    <div class="flex flex-col gap-2 sm:gap-3 md:gap-0 md:flex-1">
+                        <h2 class="section-8-headline font-['Montserrat'] font-semibold text-white leading-tight
+                            text-[20px] sm:text-[24px] md:text-[28px] lg:text-[36px] tracking-[0%]">
+                            Free consultation with exceptional quality
+                        </h2>
+                        <p class="section-8-subtext font-['Montserrat'] font-normal text-white mt-4 sm:mt-6 md:mt-8 lg:mt-10 leading-snug
+                            text-[14px] sm:text-[16px] md:text-[18px] lg:text-[24px] tracking-[0%]">
+                            Just one call away:<br class="sm:hidden" />
+                            <a href="tel:+8411022703" class="font-['Montserrat'] font-normal text-white hover:underline underline-offset-2 inline-block mt-0.5 sm:mt-0 sm:inline">
+                                +84 1102 2703
+                            </a>
+                        </p>
+                    </div>
+                    <div class="md:shrink-0 w-full md:w-auto flex justify-center md:justify-end">
+                        <a href="#" class="section-8-btn inline-block w-full  text-center border-2 border-white text-white font-['Montserrat'] font-medium px-3 py-3 sm:px-5 sm:py-3 md:px-3 md:py-3 text-[14px] sm:text-[15px] md:text-[16px] hover:bg-white hover:text-black transition-colors duration-200">
+                            Download Brochure
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8 - Footer: white top half + image bottom half, form straddles both -->
+        <section class="section-footer relative w-full min-h-[100vh] flex flex-col overflow-hidden">
+            <!-- Top half: solid white background -->
+            <div class="section-footer-top h-[11vh] min-h-[80px] sm:min-h-[120px] flex-shrink-0 bg-white"></div>
+
+            <!-- Bottom half: image background -->
+            <div class="section-footer-bottom relative flex-1 min-h-[50vh] flex flex-col">
+                <div class="absolute inset-0 z-0">
+                    <img
+                        src="img/s8/s8-i2.jpg"
+                        alt=""
+                        class="w-full h-full object-cover object-center"
+                    />
+                </div>
+                <!-- Spacer so CTA buttons sit at bottom -->
+                <div class="relative z-10 flex-1 min-h-[120px]"></div>
+                <!-- Bottom CTA buttons (on image area) - z-30 taaki form card ke upar dikhen, mobile niche + gap -->
+                <div class="section-footer-cta-wrap relative z-30 w-full flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-6 sm:gap-4 px-4 sm:px-6 md:px-10 lg:px-[70px] pt-16 sm:pt-0 pb-6 sm:pb-8 md:pb-10">
+                    <a href="#" class="section-footer-cta section-footer-cta-left order-2 sm:order-1 inline-flex items-center justify-center px-6  py-3  font-['Montserrat'] font-semibold text-white text-[14px] sm:text-[15px] uppercase tracking-wide hover:opacity-95 transition-opacity bg-[linear-gradient(180deg,#FCE890_0%,#D29A38_100%)]">
+                        Download Brochure
+                    </a>
+                    <a href="#" class="section-footer-cta section-footer-cta-right order-1 sm:order-2 inline-flex items-center justify-center  px-6  py-3  font-['Montserrat'] font-semibold text-white text-[11px] sm:text-[15px] uppercase tracking-wide hover:opacity-95 transition-opacity bg-[linear-gradient(180deg,#FCE890_0%,#D29A38_100%)]">
+                        Enquire Now
+                    </a>
+                </div>
             </div>
 
-            <!-- Bottom Video Container  -->
-            <div class="w-[997px]">
-                <video src="img/s3/ghd-video.mp4" class="w-full h-auto object-cover" autoplay muted loop
-                    playsinline></video>
-            </div>
-        </div>
+            <!-- Form card: slightly above center so more on white -->
+            <div class="absolute left-0 right-0 top-[38%] z-20 flex justify-center px-4 sm:px-6 -translate-y-1/2 pointer-events-none">
+                <div class="section-footer-card pointer-events-auto w-full max-w-[600px] sm:max-w-[640px] bg-white rounded-[12px] shadow-xl p-6 sm:p-8 md:p-10">
+                   <h2 class="section-footer-title font-['Montserrat'] font-semibold text-[#111111] text-center capitalize text-[36px] leading-[1] tracking-[0] mb-6 sm:mb-8">
+    Enquire Now
+</h2>
 
-        <!-- Center Align Container 2  -->
-        <div class="w-full flex flex-col justify-center items-center text-center ">
-            <h2 class="font-[600] text-[36px] text[#111111]">Key Highlights</h2>
-
-            <!-- Slider Container  -->
-            <div class="flex flex-col justify-center items-center max-w-[1192px]">
-                <!-- Slide  Wrapper Container  -->
-                <div class="flex justify-between items-center">
-
-                    <!-- Slide 1  -->
-                     <div class="p-2">
-                        <div class="w-[340px] flex flex-col justify-center items-center gap-3">
-                            <div class="w-[100px]">
-                                <img src="img/s3/s3-home.png" alt="" class="w-full h-auto object-cover">
+                    <form class="section-footer-form flex flex-col gap-4 sm:gap-5" action="#" method="post">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                            <div>
+                                <label for="footer-name" class="sr-only">Name</label>
+                                <input
+                                    id="footer-name"
+                                    type="text"
+                                    name="name"
+                                    placeholder="Name"
+                                    class="w-full h-12 sm:h-[48px] px-4 rounded-[4px] border border-[#e5e5e5] bg-white font-['Montserrat'] text-[15px] text-[#111111] placeholder:text-[#9ca3af] focus:outline-none focus:border-[#5E0834] focus:ring-1 focus:ring-[#5E0834] transition"
+                                />
                             </div>
-
-                            <div class="flex flex-col justify-center items-center gap-2 text-center">
-                                <h4 class="text-[18px] font-[600] text-[#111111]">Ready-to-move-in options</h4>
-                                <p class="text-[16px] font-[400] text-[#515151]">
-                                    Select 1 & 2 BHK homes available for immediate comfort and quick handover.
-                                </p>
+                            <div>
+                                <label for="footer-email" class="sr-only">Email</label>
+                                <input
+                                    id="footer-email"
+                                    type="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    class="w-full h-12 sm:h-[48px] px-4 rounded-[4px] border border-[#e5e5e5] bg-white font-['Montserrat'] text-[15px] text-[#111111] placeholder:text-[#9ca3af] focus:outline-none focus:border-[#5E0834] focus:ring-1 focus:ring-[#5E0834] transition"
+                                />
                             </div>
                         </div>
-                     </div>
-
-
-                        <!-- Slide 2  -->
-                        <div class="p-2">
-                            <div class="w-[340px] flex flex-col justify-center items-center gap-3">
-                                <div class="w-[100px]">
-                                    <img src="img/s3/s3-home.png" alt="" class="w-full h-auto object-cover">
-                                </div>
-    
-                                <div class="flex flex-col justify-center items-center gap-2 text-center">
-                                    <h4 class="text-[18px] font-[600] text-[#111111]">Ready-to-move-in options</h4>
-                                    <p class="text-[16px] font-[400] text-[#515151]">
-                                        Select 1 & 2 BHK homes available for immediate comfort and quick handover.
-                                    </p>
-                                </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                            <div>
+                                <label for="footer-phone" class="sr-only">Phone</label>
+                                <input
+                                    id="footer-phone"
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="Phone"
+                                    class="w-full h-12 sm:h-[48px] px-4 rounded-[4px] border border-[#e5e5e5] bg-white font-['Montserrat'] text-[15px] text-[#111111] placeholder:text-[#9ca3af] focus:outline-none focus:border-[#5E0834] focus:ring-1 focus:ring-[#5E0834] transition"
+                                />
                             </div>
-                         </div>
-
-
-
-                            <!-- Slide 3  -->
-                     <div class="p-2">
-                        <div class="w-[340px] flex flex-col justify-center items-center gap-3">
-                            <div class="w-[100px]">
-                                <img src="img/s3/s3-home.png" alt="" class="w-full h-auto object-cover">
-                            </div>
-
-                            <div class="flex flex-col justify-center items-center gap-2 text-center">
-                                <h4 class="text-[18px] font-[600] text-[#111111]">Ready-to-move-in options</h4>
-                                <p class="text-[16px] font-[400] text-[#515151]">
-                                    Select 1 & 2 BHK homes available for immediate comfort and quick handover.
-                                </p>
+                            <div>
+                                <label for="footer-time" class="sr-only">Preferred Time</label>
+                                <input
+                                    id="footer-time"
+                                    type="text"
+                                    name="preferred_time"
+                                    placeholder="Preferred Time"
+                                    class="w-full h-12 sm:h-[48px] px-4 rounded-[4px] border border-[#e5e5e5] bg-white font-['Montserrat'] text-[15px] text-[#111111] placeholder:text-[#9ca3af] focus:outline-none focus:border-[#5E0834] focus:ring-1 focus:ring-[#5E0834] transition"
+                                />
                             </div>
                         </div>
-                     </div>
-                </div>
+                        <div class="section-footer-message-wrap">
+                            <label for="footer-message" class="sr-only">Message</label>
+                            <textarea
+                                id="footer-message"
+                                name="message"
+                                placeholder="Message"
+                                rows="4"
+                                class="w-full min-h-[100px] px-4 py-3 rounded-[4px] border border-[#e5e5e5] bg-white font-['Montserrat'] text-[15px] text-[#111111] placeholder:text-[#9ca3af] focus:outline-none focus:border-[#5E0834] focus:ring-1 focus:ring-[#5E0834] transition resize-y"
+                            ></textarea>
+                           
+                        </div>
+                        <div class="flex justify-center Align-items-center">
+                        <button
+                            type="submit"
+                            class="section-footer-submit w-[200px] h-12 sm:h-[52px] bg-[#5E0834] text-white font-['Montserrat'] font-semibold text-[15px] sm:text-[16px] shadow-md hover:bg-[#4a0629] transition-colors duration-200 mt-1 "
+                        >
+                            Book a Site Visit Now
+                        </button>
 
-                <!-- Slider Pagination Dots  -->
-                <div class="flex justify-center items-center gap-2">
-                    <div class="w-[10px] h-[10px] bg-[#0000005E] rounded-full"></div>
-                    <div class="w-[10px] h-[10px] bg-[#515151] rounded-full"></div>
-                    <div class="w-[10px] h-[10px] bg-[#0000005E] rounded-full"></div>
-                    <div class="w-[10px] h-[10px] bg-[#0000005E] rounded-full"></div>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <script src="script.js"></script>
-</body>
+        <!--section 9 - Footer -->
+        <section class="section-9 bg-[#641235] py-12 sm:py-16 lg:py-8">
+            <div class="section-9-inner max-w-[1200px] mx-auto px-4 sm:px-6 text-center">
+                <!-- Logo + Tagline -->
+                <div class="section-9-brand mb-3 sm:mb-10">
+                    <img
+                        src="img/s9/skypark.png"
+                        alt="Sky Park - Branded Residences"
+                        class="section-9-logo mx-auto mb-3 max-w-[220px] sm:max-w-[260px] w-full h-auto object-contain"
+                    />
+                    <!-- <p class="section-9-tagline text-[#cccccc] font-['Montserrat'] text-[14px] sm:text-[15px] leading-relaxed">
+                        Building Dreams, Creating Landmarks
+                    </p> -->
+                </div>
+                <!-- Descriptive text -->
+                <div class="section-9-desc w-full max-w-[815px] mx-auto mb-2 sm:mb-3 px-2">
+                    <p class="section-9-desc-text text-[#cccccc] font-['Montserrat'] text-[14px] sm:text-[15px] leading-relaxed max-w-full">
+                        Lorem Ipsum is simply dummy text of the printing and industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and industry's standard dummy text ever since the 1500s,
+                    </p>
+                </div>
+            </div>
+            <!-- Full-width dashed line + Copyright + Credit -->
+            <div class="section-9-bottom-wrap w-full pt-4 mt-6 sm:mt-8 border-t border-[#781146]">
+                <div class="w-full px-6 sm:px-10 lg:px-14 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
+                    <span class="section-9-copy text-[#cccccc] font-['Montserrat'] text-[12px] sm:text-[13px] sm:text-left">© 2026 Ghdinfra. All Rights Reserved.</span>
+                    <span class="section-9-credit text-[#cccccc] font-['Montserrat'] text-[12px] sm:text-[13px] sm:text-right">Digital Media Planned By Ritz Media World</span>
+                </div>
+            </div>
+        </section>
 
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="script.js"></script>
+        <!-- Mobile: heading 22px, paragraph 13px - last load taaki Tailwind override na kare -->
+        <style>
+            @media (max-width: 639px) {
+                html body h1, html body h2, html body h3, html body h4 {
+                    font-size: 22px !important;
+                    line-height: 1.3 !important;
+                }
+                html body p {
+                    font-size: 13px !important;
+                    line-height: 1.4 !important;
+                }
+            }
+        </style>
+    </body>
 </html>
