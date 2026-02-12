@@ -78,8 +78,8 @@
     <main class="w-full relative">
         <!-- Section 1 Is Starting From Here  -->
         <section id="home" class="w-full h-auto overflow-hidden">
-            <img src="img/s1/s1-banner2.jpg" alt="s1-banner2"
-                class="w-full h-auto sm:min-h-[280px] md:min-h-[360px] object-cover object-center max-w-full" />
+            <img id="banner-image" src="new-imgs/ghd-new-banner.jpg" alt="s1-banner2"
+                class="w-full h-auto sm:min-h-[280px] md:min-h-[360px] object-cover object-center max-w-full cursor-pointer" />
         </section>
     </main>
     <!-- Fixed Navbar - hamesha top par visible, scroll par bhi same jagah -->
@@ -1444,6 +1444,12 @@
 
         // Open popup when clicking on "Why Invest" CTA button
         document.getElementById('why-invest-cta-btn')?.addEventListener('click', function (e) {
+            e.preventDefault();
+            openPopupModal();
+        });
+
+        // Open popup when clicking on banner image
+        document.getElementById('banner-image')?.addEventListener('click', function (e) {
             e.preventDefault();
             openPopupModal();
         });
